@@ -1,8 +1,10 @@
 {
     "id": 13,
-    "name": "reggae",
-    "ad_map": "GM",
+    "name": "got",
+    "plugin": "AD",
+    "plugin_map": "GM",
     "description": "",
+    "used_for": "Game of Thrones Theme",
     "maps": [
         {
             "pad0": {

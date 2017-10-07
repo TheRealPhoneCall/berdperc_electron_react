@@ -1,18 +1,20 @@
 {
-    "id": 3,
-    "name": "rock",
-    "ad_map": "GM",
+    "id": 4,
+    "name": "ad_drive",
+    "plugin": "AD & FPC",
+    "plugin_map": "GM",
     "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
     "description": "",
+    "used_for": "Incubus - Drive",
     "maps": [
         {
             "pad0": {
                 "notes": [
                     {
-                        "note": 38,
-                        "name": "Snare Open Hit",
-                        "min_vel": 0,
-                        "max_vel": 127,
+                        "note": 0,
+                        "name": "Turntable",
+                        "min_vel": 100,
+                        "max_vel": 100,
                         "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"
@@ -24,7 +26,7 @@
                     {
                         "note": 37,
                         "name": "Snare SideStick",
-                        "min_vel": 0,
+                        "min_vel": 90,
                         "max_vel": 127,
                         "threshold": 10,
                         "channel": 0,
@@ -48,10 +50,19 @@
             "pad3": {
                 "notes": [
                     {
-                        "note": 0,
-                        "name": "Turntable",
-                        "min_vel": 100,
-                        "max_vel": 100,
+                        "note": 49,
+                        "name": "LCYM",
+                        "min_vel": 60,
+                        "max_vel": 70,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    },
+                    {
+                        "note": 36,
+                        "name": "KICK",
+                        "min_vel": 80,
+                        "max_vel": 110,
                         "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"
@@ -61,10 +72,19 @@
             "pad4": {
                 "notes": [
                     {
+                        "note": 57,
+                        "name": "RCYM",
+                        "min_vel": 60,
+                        "max_vel": 110,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    },
+                    {
                         "note": 49,
                         "name": "LCYM",
-                        "min_vel": 70,
-                        "max_vel": 127,
+                        "min_vel": 60,
+                        "max_vel": 110,
                         "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"
@@ -83,9 +103,9 @@
             "pad5": {
                 "notes": [
                     {
-                        "note": 55,
+                        "note": 57,
                         "name": "RCYM",
-                        "min_vel": 90,
+                        "min_vel": 60,
                         "max_vel": 127,
                         "threshold": 10,
                         "channel": 0,
@@ -107,10 +127,10 @@
             "pad0": {
                 "notes": [
                     {
-                        "note": 38,
-                        "name": "Snare Open Hit",
-                        "min_vel": 0,
-                        "max_vel": 127,
+                        "note": 0,
+                        "name": "Turntable",
+                        "min_vel": 100,
+                        "max_vel": 100,
                         "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"
@@ -146,10 +166,19 @@
             "pad3": {
                 "notes": [
                     {
-                        "note": 47,
-                        "name": "LTOM",
-                        "min_vel": 0,
-                        "max_vel": 127,
+                        "note": 49,
+                        "name": "LCYM",
+                        "min_vel": 60,
+                        "max_vel": 70,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    },
+                    {
+                        "note": 36,
+                        "name": "KICK",
+                        "min_vel": 80,
+                        "max_vel": 110,
                         "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"
@@ -159,19 +188,19 @@
             "pad4": {
                 "notes": [
                     {
-                        "note": 49,
-                        "name": "LCYM",
-                        "min_vel": 90,
-                        "max_vel": 127,
+                        "note": 57,
+                        "name": "RCYM",
+                        "min_vel": 60,
+                        "max_vel": 110,
                         "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"
                     },
                     {
-                        "note": 55,
-                        "name": "RCYM",
-                        "min_vel": 90,
-                        "max_vel": 127,
+                        "note": 49,
+                        "name": "LCYM",
+                        "min_vel": 60,
+                        "max_vel": 110,
                         "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"
@@ -190,10 +219,19 @@
             "pad5": {
                 "notes": [
                     {
-                        "note": 0,
-                        "name": "Turntable",
-                        "min_vel": 90,
-                        "max_vel": 90,
+                        "note": 57,
+                        "name": "RCYM",
+                        "min_vel": 60,
+                        "max_vel": 127,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    },
+                    {
+                        "note": 36,
+                        "name": "KICK",
+                        "min_vel": 50,
+                        "max_vel": 110,
                         "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"

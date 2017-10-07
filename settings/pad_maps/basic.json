@@ -1,7 +1,10 @@
 {
     "id": 7,
     "name": "basic",
-    "ad_map": "GM",
+    "plugin": "AD & FPC",
+    "plugin_map": "GM & FPC",
+    "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
+    "used_for": "Electronic and Acoustic drum tracks",
     "description": "",
     "maps": [
         {

@@ -1,10 +1,10 @@
 {
     "id": 12,
-    "name": "basic",
-    "plugin": "FPC",
-    "ad_map": "FPC",
-    "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
+    "name": "fpc_thunder",
+    "plugin": "AD & FPC",
+    "plugin_map": "GM & FPC",
     "description": "",
+    "used_for": "Imagine Dragons - Thunder",
     "maps": [
         {
             "pad0": {

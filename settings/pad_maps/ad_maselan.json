@@ -1,8 +1,10 @@
 {
     "id": 5,
-    "name": "rock",
-    "ad_map": "GM",
+    "name": "ad_maselan",
+    "plugin": "AD & FPC",
+    "plugin_map": "GM",
     "description": "",
+    "used_for": "Eraserheads - Maselang Bahaghari",
     "maps": [
         {
             "pad0": {

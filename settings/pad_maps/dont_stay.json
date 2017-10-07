@@ -1,8 +1,10 @@
 {
     "id": 8,
-    "name": "don't stay - linkin park",
-    "ad_map": "GM",
+    "name": "dont_staty",
+    "plugin": "AD",
+    "plugin_map": "GM",
     "description": "",
+    "used_for": "Linkin Park - Don't Stay",
     "maps": [
         {
             "pad0": {

@@ -1,8 +1,10 @@
 {
     "id": 21,
-    "name": "twenty one pilots",
-    "ad_map": "GM",
+    "name": "ad_ridetop",
+    "plugin": "AD & FPC",
+    "plugin_map": "GM & FPC",
     "description": "",
+    "used_for": "twenty one pilots - Ride",
     "maps": [
         {
             "pad0": {

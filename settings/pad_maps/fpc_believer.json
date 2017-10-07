@@ -1,8 +1,10 @@
 {
     "id": 11,
-    "name": "believer - imagine dragons",
-    "ad_map": "GM",
+    "name": "fpc_believer",
+    "plugin": "AD & FPC",
+    "plugin_map": "GM & FPC",
     "description": "",
+    "used_for": "Imagine Dragons - Believer",
     "maps": [
         {
             "pad0": {

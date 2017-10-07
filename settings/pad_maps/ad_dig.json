@@ -1,8 +1,10 @@
 {
     "id": 2,
-    "name": "rock",
-    "ad_map": "GM",
+    "name": "ad_dig",
+    "plugin": "AD",
+    "plugin_map": "GM",
     "description": "",
+    "used_for": "Incubus - Dig",
     "maps": [
         {
             "pad0": {

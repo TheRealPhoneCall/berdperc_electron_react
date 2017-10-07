@@ -1,10 +1,11 @@
 {
     "id": 10,
-    "name": "basic",
-    "plugin": "FPC",
-    "ad_map": "FPC",
-    "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
+    "name": "fpc_24kmagic",
+    "plugin": "AD & FPC",
+    "plugin_map": "GM & FPC",
     "description": "",
+    "used_for": "Bruno Mars - 24K Magic",
+    "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
     "maps": [
         {
             "pad0": {
