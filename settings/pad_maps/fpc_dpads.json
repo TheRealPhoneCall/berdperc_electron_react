@@ -1,40 +1,41 @@
 {
-    "id": 7,
-    "name": "basic",
-    "plugin": "AD & FPC",
-    "plugin_map": "GM & FPC",
-    "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
-    "used_for": "Electronic and Acoustic drum tracks",
+    "id": 9,
+    "name": "fpc_dpads",
+    "plugin": "FPC",
+    "plugin_map": "FPC",
     "description": "",
+    "used_for": "Generic Digital Pads Controller",
+    "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
     "maps": [
         {
             "pad0": {
                 "notes": [
                     {
+                        "note": 36,
+                        "name": "KICK",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    },
+                    {
                         "note": 49,
-                        "name": "LCYM",
-                        "min_vel": 10,
-                        "max_vel": 110,
-                        "threshold": 10,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    },
-                    {
-                        "note": 36,
-                        "name": "KICK",
-                        "min_vel": 50,
+                        "name": "Cymbals",
+                        "min_vel": 40,
                         "max_vel": 110,
                         "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"
                     }
+                    
                 ]
             },
             "pad1": {
                 "notes": [
                     {
-                        "note": 109,
-                        "name": "Snare RimShot db1",
+                        "note": 43,
+                        "name": "Floor Tom",
                         "min_vel": 0,
                         "max_vel": 126,
                         "threshold": 10,
@@ -53,35 +54,17 @@
                         "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"
-                    },
-                    {
-                        "note": 123,
-                        "name": "HH Closed2 Tip",
-                        "min_vel": 50,
-                        "max_vel": 110,
-                        "threshold": 10,
-                        "channel": 0,
-                        "port": "berdrums 1"
                     }
                 ]
             },
             "pad3": {
                 "notes": [
                     {
-                        "note": 38,
-                        "name": "Snare Open Hit",
+                        "note": 48,
+                        "name": "High Tom",
                         "min_vel": 10,
                         "max_vel": 110,
                         "threshold": 30,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    },
-                    {
-                        "note": 123,
-                        "name": "HH Closed2 Tip",
-                        "min_vel": 50,
-                        "max_vel": 110,
-                        "threshold": 10,
                         "channel": 0,
                         "port": "berdrums 1"
                     }
@@ -90,8 +73,8 @@
             "pad4": {
                 "notes": [
                     {
-                        "note": 123,
-                        "name": "HH Closed2 Tip",
+                        "note": 37,
+                        "name": "Sidestick",
                         "min_vel": 10,
                         "max_vel": 110,
                         "threshold": 30,
@@ -103,8 +86,112 @@
             "pad5": {
                 "notes": [
                     {
-                        "note": 123,
-                        "name": "HH Closed2 Tip",
+                        "note": 40,
+                        "name": "Snare 1",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 30,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad6": {
+                "notes": [
+                    {
+                        "note": 41,
+                        "name": "Snare 1",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 30,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad7": {
+                "notes": [
+                    {
+                        "note": 42,
+                        "name": "Snare 1",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 30,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad8": {
+                "notes": [
+                    {
+                        "note": 43,
+                        "name": "Snare 1",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 30,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad9": {
+                "notes": [
+                    {
+                        "note": 44,
+                        "name": "Snare 1",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 30,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad10": {
+                "notes": [
+                    {
+                        "note": 45,
+                        "name": "Snare 1",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 30,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad11": {
+                "notes": [
+                    {
+                        "note": 46,
+                        "name": "Snare 1",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 30,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad12": {
+                "notes": [
+                    {
+                        "note": 47,
+                        "name": "Snare 1",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 30,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad13": {
+                "notes": [
+                    {
+                        "note": 48,
+                        "name": "Snare 1",
                         "min_vel": 10,
                         "max_vel": 110,
                         "threshold": 30,
@@ -113,113 +200,6 @@
                     }
                 ]
             }
-        },
-        {
-            "pad0": {
-                "notes": [
-                    {
-                        "note": 50,
-                        "name": "LCYM",
-                        "min_vel": 10,
-                        "max_vel": 110,
-                        "threshold": 10,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    },
-                    {
-                        "note": 51,
-                        "name": "KICK",
-                        "min_vel": 50,
-                        "max_vel": 110,
-                        "threshold": 10,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    }
-                ]
-            },
-            "pad1": {
-                "notes": [
-                    {
-                        "note": 50,
-                        "name": "Snare RimShot db1",
-                        "min_vel": 0,
-                        "max_vel": 126,
-                        "threshold": 10,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    }
-                ]
-            }, 
-            "pad2": {
-                "notes": [
-                    {
-                        "note": 50,
-                        "name": "KICK",
-                        "min_vel": 10,
-                        "max_vel": 110,
-                        "threshold": 10,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    },
-                    {
-                        "note": 51,
-                        "name": "HH Closed2 Tip",
-                        "min_vel": 50,
-                        "max_vel": 110,
-                        "threshold": 10,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    }
-                ]
-            },
-            "pad3": {
-                "notes": [
-                    {
-                        "note": 50,
-                        "name": "Snare Open Hit",
-                        "min_vel": 10,
-                        "max_vel": 110,
-                        "threshold": 30,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    },
-                    {
-                        "note": 51,
-                        "name": "HH Closed2 Tip",
-                        "min_vel": 50,
-                        "max_vel": 110,
-                        "threshold": 10,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    }
-                ]
-            },
-            "pad4": {
-                "notes": [
-                    {
-                        "note": 50,
-                        "name": "HH Closed2 Tip",
-                        "min_vel": 10,
-                        "max_vel": 110,
-                        "threshold": 30,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    }
-                ]
-            },
-            "pad5": {
-                "notes": [
-                    {
-                        "note": 50,
-                        "name": "HH Closed2 Tip",
-                        "min_vel": 10,
-                        "max_vel": 110,
-                        "threshold": 30,
-                        "channel": 0,
-                        "port": "berdrums 1"
-                    }
-                ]
-            }
-        }               
+        }
     ]
 }

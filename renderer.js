@@ -51,9 +51,9 @@ function renderTable(){
                     <td id="name-${obj.id}">${obj.name}</td>
                     <td>${obj.plugin}</td>
                     <td>${obj.plugin_map}</td>
-                    // <td>${obj.description}</td>
+                    <!-- <td>${obj.description}</td> -->
                     <td>${obj.used_for}</td>
-                    <td>Rock</td>
+                    <!-- <td>Rock</td> -->
                     <td>
                         <a class="btn-floating tiny waves-effect waves-light red run-pad-btn" id="run-${obj.id}"><i class="tiny material-icons left">send</i>Run</a>
                         <a class="btn-floating waves-effect waves-light red edit-pad-btn" id="edit-${obj.id}"><i class="tiny material-icons left">mode_edit</i>Edit</a>
