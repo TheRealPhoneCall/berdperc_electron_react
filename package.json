@@ -1,10 +1,14 @@
 {
-  "name": "electron-quick-start",
+  "name": "berdperc_app",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "The desktop app support for configuring/playing with berdperc instruments",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "test": "mocha -R spec",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"berdperc\"",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/icons/png/icon.png --prune=true --out=release-builds"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -14,9 +18,15 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "berdperc_team",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.6.2"
+    "electron": "~1.6.2",
+    "electron-packager": "^9.1.0",
+    "jsonfile": "^4.0.0",
+    "materialize-css": "~0.100.2",
+    "mocha": "^2.2.5",
+    "python-shell": "^0.4.0",
+    "should": "^6.0.0"
   }
 }

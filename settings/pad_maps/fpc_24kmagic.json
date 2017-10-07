@@ -1,0 +1,118 @@
+{
+    "id": 10,
+    "name": "basic",
+    "plugin": "FPC",
+    "ad_map": "FPC",
+    "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
+    "description": "",
+    "maps": [
+        {
+            "pad0": {
+                "notes": [
+                    {
+                        "note": 40,
+                        "name": "Snare 1",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 30,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad1": {
+                "notes": [
+                    {
+                        "note": 40,
+                        "name": "Snare 1",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 30,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad2": {
+                "notes": [
+                    {
+                        "note": 36,
+                        "name": "KICK",
+                        "min_vel": 10,
+                        "max_vel": 110,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad3": {
+                "notes": [
+                    {
+                        "note": 36,
+                        "name": "KICK",
+                        "min_vel": 50,
+                        "max_vel": 110,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    },
+                    {
+                        "note": 46,
+                        "name": "Open HiHat",
+                        "min_vel": 80,
+                        "max_vel": 126,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    },
+                    {
+                        "note": 44,
+                        "name": "Open HiHat",
+                        "min_vel": 80,
+                        "max_vel": 126,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            },
+            "pad4": {
+                "notes": [
+                    {
+                        "note": 36,
+                        "name": "KICK",
+                        "min_vel": 50,
+                        "max_vel": 110,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    },
+                    {
+                        "note": 55,
+                        "name": "Crash",
+                        "min_vel": 60,
+                        "max_vel": 126,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                    
+                ]
+            },
+            "pad5": {
+                "notes": [
+                    {
+                        "note": 74,
+                        "name": "DJ Turntable Kick",
+                        "min_vel": 100,
+                        "max_vel": 100,
+                        "threshold": 10,
+                        "channel": 0,
+                        "port": "berdrums 1"
+                    }
+                ]
+            }
+        } 
+    ]
+}
