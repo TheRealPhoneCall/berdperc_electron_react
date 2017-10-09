@@ -95,8 +95,8 @@
     <div class="row">
       <div class="col s9 offset-s3">
         <div id="bordered" class="section scrollspy">
-        <h2 class="header">berdcajon v1</h2>
         <div class="row">
+            <div id="page-title"></div>
             <div class="col s12">
                 <div class="col s9">
                     <div class="col s12">
@@ -250,12 +250,49 @@
       </div>
 
     </div>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <script type="text/babel">
+        // You can also require other files to run in this process
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        const PythonShell = require('python-shell');
+        const fs = require('fs');
+        const jsonfile = require('jsonfile')
+        
+        const COM = 'COM5'
+        const tblbody_rock = document.getElementById('tblbody-rock');
+    
+        $('select').material_select();
+        
+        import * as React from 'react';
+        import * as ReactDOM from 'react-dom';
+        
+        var Title=require('./components/Title.js');
+
+        //export default class Title extends React.Component {
+        //    render(){
+        //        return(
+        //            <h2>Hello World, Im a react component! Brace yourself!</h2> 
+        //        )
+        //    }
+        //}
+
+        //var Title = React.createClass({
+        //    render: function (){
+        //        return (<h2>Hello World, Im a react component! Brace yourself!</h2>)
+        //    }
+        //});
+    
+        ReactDOM.render(
+            <Title />,
+            document.getElementById('page-title')
+        );
+    
+        
+      </script>
 
   </body>
 
 
-  <script>
-    // You can also require other files to run in this process
-    require('../../render_percpage.js')
-  </script>
+  
 </html>

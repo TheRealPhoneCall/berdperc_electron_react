@@ -1,29 +1,41 @@
+const path = require('path')
+const url = require('url')
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 // Other electron modules
-const {Menu, ipcMain} = electron;
+const {
+  Menu,
+  ipcMain
+} = electron;
+// Module to run webpack server
+const startServer = require('./serve')
 
-const path = require('path')
-const url = require('url')
 
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-function createWindow () {
+function createWindow() {
+  // Start webpack server
+  startServer()
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1200, height: 900})
+  mainWindow = new BrowserWindow({
+    width: 1200,
+    height: 900
+  })
 
   // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index2.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  // Comment out for now, in order to run webpack server correctly
+  // mainWindow.loadURL(url.format({
+  //   pathname: path.join(__dirname, 'index2.html'),
+  //   protocol: 'file:',
+  //   slashes: true
+  // }))
+  mainWindow.loadURL('http://localhost:3000/index2.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -63,5 +75,3 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-
