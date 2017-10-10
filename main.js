@@ -10,8 +10,6 @@ const {
   Menu,
   ipcMain
 } = electron;
-// Module to run webpack server
-const startServer = require('./serve')
 
 
 
@@ -20,8 +18,6 @@ const startServer = require('./serve')
 let mainWindow
 
 function createWindow() {
-  // Start webpack server
-  startServer()
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 1200,
@@ -29,16 +25,15 @@ function createWindow() {
   })
 
   // and load the index.html of the app.
-  // Comment out for now, in order to run webpack server correctly
-  // mainWindow.loadURL(url.format({
-  //   pathname: path.join(__dirname, 'index2.html'),
-  //   protocol: 'file:',
-  //   slashes: true
-  // }))
-  mainWindow.loadURL('http://localhost:3000/')
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'index.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
+  // mainWindow.loadURL('http://localhost:3000/')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
