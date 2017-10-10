@@ -13,17 +13,17 @@ export default class Nav extends React.Component {
         return (
             <BrowserRouter>
               <nav>
-                <div class="nav-wrapper grey">
-                  <div class="brand-logo">
-                    <Link to="/"><a class="brand-logo">berdperc</a></Link>
+                <div className="nav-wrapper grey">
+                  <div className="brand-logo">
+                    <Link to="/" className="brand-logo">berdper</Link>
                   </div>
-                  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                  <ul class="right hide-on-med-and-down">
+                  <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+                  <ul className="right hide-on-med-and-down">
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/settings">Settings</Link></li>
                     <li><Link to="/help">Help</Link></li>
                   </ul>
-                  <ul class="side-nav" id="mobile-demo" style="transform: translateX(-100%);">
+                  <ul className="side-nav" id="mobile-demo">
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/settings">Settings</Link></li>
                     <li><Link to="/help">Help</Link></li>

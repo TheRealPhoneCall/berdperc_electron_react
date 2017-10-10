@@ -9,8 +9,8 @@ export default class Other extends React.Component {
       <div>
         <Header />
         <Nav />
-        <div class="row">
-          <div class="col s9 offset-s3">
+        <div className="row">
+          <div className="col s9 offset-s3">
             <h1>Other Page</h1>
           </div>
         </div>

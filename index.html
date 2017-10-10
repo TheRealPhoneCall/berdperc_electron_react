@@ -21,7 +21,16 @@
   </body>
 
   <script>
-    require('babel-register');
+    require('babel-register')({
+      presets: [
+        ['env', {
+          targets: {
+            electron: "1.6.2"
+          },
+        }],
+        'react',
+      ],
+    });
     require('./src/index.js');
   </script>
 </html>

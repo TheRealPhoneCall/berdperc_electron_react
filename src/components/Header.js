@@ -13,7 +13,7 @@ export default class Header extends React.Component {
                     <div className="container"><a href="#" data-activates="nav-mobile" className="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i className="material-icons">menu</i></a></div>
                     <ul id="nav-mobile" className="side-nav fixed">
                         <li className="logo">
-                            <img src="../../assets/logo/logo.jpg" width="290px" height="100%"></img>
+                            <img src="assets/logo/logo.jpg" width="290px" height="100%"></img>
                         </li>
                             <ul className="collapsible collapsible-accordion">
                             <li className="bold"><a className="collapsible-header waves-effect waves-teal">Percussions</a>
