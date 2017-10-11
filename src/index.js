@@ -13,46 +13,13 @@ import Header from './components/Header'
 import Nav from './components/Nav'
 
 // render on page
-// ReactDOM.render(
-//     <BrowserRouter>
-//         <div>        
-//             <Switch>
-//                 <Route component={Layout}/>
-//                 <Route exact path="/" component={Home}/>
-//                 <Route path="about" component={About}/>
-//                 <Route path="help" component={Help}/>
-//                 <Route path="other" component={Other}/>
-//                 <Route path="settings" component={Settings}/>
-//             </Switch>
-//         </div>
-//     </BrowserRouter>,
-//     document.getElementById('app')
-// );
-
-// // render on page
-// ReactDOM.render(
-//     <BrowserRouter>
-//         <div> 
-//             {/* <Header /> */}
-//             <Nav />
-//             <div className="row">
-//                 <div className="col s9 offset-s3">
-//                     <Route exact path="/" component={Home}/>
-//                     <Route path="about" component={About}/>
-//                     <Route path="help" component={Help}/>
-//                     <Route path="other" component={Other}/>
-//                     <Route path="settings" component={Settings}/>
-//                 </div>
-//             </div>                    
-//         </div>
-//     </BrowserRouter>,
-//     document.getElementById('app')
-// );
-
-// render on page
 ReactDOM.render(
     <BrowserRouter>
         <Layout />
     </BrowserRouter>,
     document.getElementById('app')
 );
+
+// initiate js objects/plugins
+const select = document.querySelector('select')
+select.material_select();

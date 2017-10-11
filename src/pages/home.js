@@ -1,9 +1,7 @@
 import React from 'react';
 import jsonfile from 'jsonfile'
 
-import Header from '../components/Header';
-import Nav from '../components/Nav';
-import Percussion from '../components/percussions/Percussion';
+import Perc from '../components/percussions/Perc';
 
 import PercAPI from '../data/api'
 
@@ -19,17 +17,27 @@ const utils = require('../utils')
 
 export default class Home extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {
+      percussions: PercAPI.all()
+    }
+  }
+
   render() {
     console.log("Home Page Rendered!")
 
-    // const percussions = getJsonObject('../data/percussions.json');    
-    const percussions = PercAPI.all();
-    console.log("percussions:", percussions)
     return (
       <div className="col s12">
-        <Percussion perc={percussions[0]}/>
-        <Percussion perc={percussions[1]}/>
-        <Percussion perc={percussions[2]}/>
+        {
+          this.state.percussions.map(function (percussion, i){
+            return (
+              <div>
+                <Perc key={i} perc={percussion}/>
+              </div>
+            )
+          })
+        }
       </div>
     )
   }     
