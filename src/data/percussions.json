@@ -1,0 +1,23 @@
+[
+    {
+        "id": 0,
+        "name": "berdcajon v1",
+        "html_description": "<p>An innovative electronic cajon, with silent pads and configurable by the control panel and by the berdperc software.</p>",
+        "image": "berdcajon_v1.png",
+        "logo": ""
+    },
+    {
+        "id": 1,
+        "name": "berdcajon v2",
+        "html_description": "<p>A powerful acoustic cajon with electronic drum pads on the side configurable by the control panel and by the berdperc software.</p><p>Unlike v1, this version has powerful accoustic sounds you can also play along with.</p>",
+        "image": "berdcajon_v2.png",
+        "logo": ""
+    },
+    {
+        "id": 2,
+        "name": "berdpad",
+        "html_description": "<p>An innovative table top electronic drum pads configurable by the control panel and by the berdperc software.</p>",
+        "image": "berdpad.png",
+        "logo": ""
+    }
+]

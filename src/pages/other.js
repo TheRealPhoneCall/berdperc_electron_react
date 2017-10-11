@@ -5,16 +5,9 @@ import Nav from '../components/Nav';
 
 export default class Other extends React.Component {
   render() {
+    console.log("Other Page Rendered!")
     return (
-      <div>
-        <Header />
-        <Nav />
-        <div className="row">
-          <div className="col s9 offset-s3">
-            <h1>Other Page</h1>
-          </div>
-        </div>
-      </div>
+      <h1>Other Page</h1>
     )
   }
 };
