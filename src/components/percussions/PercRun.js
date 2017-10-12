@@ -33,13 +33,13 @@ export default class PercRun extends React.Component {
                 <div className="card">
                     <div className="card-image">
                         <img src={img_src}/>
-                        <span className="card-title">{perc.name}</span>
+                        <span className="card-title"><h2>{perc.name}</h2></span>
                     </div>
                     <div className="card-content">
-                        {perc.html_description}
+                        <p>{perc.html_description}</p>
                     </div>
                     <div className="card-action">
-                        {/* <button id="btn-berdcajon" className="btn waves-effect waves-light">Run</button> */}
+                        <Link to='/' className="btn waves-effect waves-light">Stop</Link>
                     </div>
                 </div>
             </div>

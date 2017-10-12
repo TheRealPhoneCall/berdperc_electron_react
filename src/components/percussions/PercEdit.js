@@ -25,7 +25,7 @@ export default class PercEdit extends React.Component {
         return (
             <div id="bordered" class="section scrollspy">
                 <div class="row">
-                    <div id="page-title">{perc.name}</div>
+                    <div id="page-title"><h2>{perc.name}</h2></div>
                     <div class="col s12">
                         <PercCard perc={perc} />
                         <PercSounds perc={perc} />

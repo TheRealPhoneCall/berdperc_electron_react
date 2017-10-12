@@ -20,6 +20,4 @@ ReactDOM.render(
     document.getElementById('app')
 );
 
-// initiate js objects/plugins
-const select = document.querySelector('select')
-select.material_select();
+
