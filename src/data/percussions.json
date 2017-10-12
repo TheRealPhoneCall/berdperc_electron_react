@@ -2,10 +2,19 @@
     {
         "id": 0,
         "name": "berdcajon v1",
+        "slug": "berdcajon_v1",
         "html_description": "An innovative electronic cajon, with silent pads and configurable by the control panel and by the berdperc software.",
         "image": "berdcajon_v1.png",
         "image_front": "berdcajon_v1_front.png",
-        "logo": ""
+        "logo": "",
+        "pads": [
+            {"name": "pad0", "pad_type": "analog"},
+            {"name": "pad1", "pad_type": "analog"},
+            {"name": "pad2", "pad_type": "analog"},
+            {"name": "pad3", "pad_type": "analog"},
+            {"name": "pad4", "pad_type": "analog"},
+            {"name": "pad5", "pad_type": "analog"}
+        ]
     },
     {
         "id": 1,
@@ -13,7 +22,15 @@
         "html_description": "A powerful acoustic cajon with electronic drum pads on the side configurable by the control panel and by the berdperc software. Unlike v1, this version has powerful accoustic sounds you can also play along with.",
         "image": "berdcajon_v2.png",
         "image_front": "berdcajon_v2_front.png",
-        "logo": ""
+        "logo": "",
+        "pads": [
+            {"name": "pad0", "pad_type": "analog"},
+            {"name": "pad1", "pad_type": "analog"},
+            {"name": "pad2", "pad_type": "analog"},
+            {"name": "pad3", "pad_type": "analog"},
+            {"name": "pad4", "pad_type": "analog"},
+            {"name": "pad5", "pad_type": "analog"}
+        ]
     },
     {
         "id": 2,
@@ -21,6 +38,17 @@
         "html_description": "An innovative table top electronic drum pads configurable by the control panel and by the berdperc software.",
         "image": "berdpad.png",
         "image_front": "berdpad_top.png",
-        "logo": ""
+        "logo": "",
+        "pads": [
+            {"name": "pad0", "pad_type": "analog"},
+            {"name": "pad1", "pad_type": "analog"},
+            {"name": "pad2", "pad_type": "analog"},
+            {"name": "pad3", "pad_type": "analog"},
+            {"name": "pad4", "pad_type": "analog"},
+            {"name": "pad5", "pad_type": "analog"},
+            {"name": "pad6", "pad_type": "analog"},
+            {"name": "pad7", "pad_type": "analog"},
+            {"name": "pad8", "pad_type": "analog"}
+        ]
     }
 ]

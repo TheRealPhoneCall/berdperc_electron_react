@@ -8,6 +8,7 @@ import Other from '../pages/Other';
 import Settings from '../pages/Settings';
 import PercRun from '../components/percussions/PercRun';
 import PercEdit from '../components/percussions/PercEdit';
+import PercPadTab from '../components/percussions/PercPadTab';
 
 
 // render on page
@@ -24,6 +25,7 @@ export default class Main extends React.Component {
                         <Route path="/settings" component={Settings}/>
                         <Route exact path="/perc/:id/" component={PercRun}/>
                         <Route exact path="/perc/:id/edit" component={PercEdit}/>
+                        {/* <Route exact path="/perc/:id/edit/:pad_id" component={PercPadTab}/> */}
                         <Route exact path="/perc/:id/run" component={PercRun}/>
                     </Switch>
                 </div>

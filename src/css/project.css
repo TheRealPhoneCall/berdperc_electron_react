@@ -1,3 +1,69 @@
 .collapsible-body{
     padding: 0;
   }
+
+/*  berdcajon v1 padding */
+.pads-berdcajon_v1{
+    padding: 0;
+    z-index: 1000;
+    opacity: 0.1;
+    background: rebeccapurple;
+    
+}
+
+.pad-img .pads-berdcajon_v1:hover{
+    opacity: 0.3;
+}
+
+.pad-img {
+    vertical-align: middle;
+}
+
+.pad-img div.pad0{
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    width: 6em;
+    height: 2em;    
+}
+
+.pad-img div.pad1{
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    width: 6em;
+    height: 2em;    
+}
+
+.pad-img div.pad2{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    width: 6em;
+    height: 4em;    
+}
+
+.pad-img div.pad3{
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    width: 6em;
+    height: 4em;    
+}
+
+.pad-img div.pad4{
+    position: absolute;
+    top: 38%;
+    left: 45%;
+    width: 6em;
+    height: 2em;    
+}
+
+.pad-img div.pad5{
+    position: absolute;
+    top: 38%;
+    left: 55%;
+    width: 6em;
+    height: 2em;    
+}
+

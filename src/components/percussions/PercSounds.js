@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Collapsible, CollapsibleItem, Collection, CollectionItem } from 'react-materialize'
 
-import { GmAdMapAPI } from '../../data/api'
+import { MidiMapAPI } from '../../data/api'
 
 const path = require('path')
 
@@ -11,7 +11,7 @@ export default class PercSounds extends React.Component {
     constructor() {
         super()
         this.state = {
-            midi_maps: GmAdMapAPI.all()
+            midi_maps: MidiMapAPI.all('gm_admap.json')
         }
     }
     render() {
@@ -37,21 +37,6 @@ export default class PercSounds extends React.Component {
                             )
                         })
                     }                         
-                
-                    {/* <CollapsibleItem header='Hi-Hat' icon='filter_drama'>
-                        <Collection className="collapsible-collection">
-                            <CollectionItem>Alvin</CollectionItem>
-                            <CollectionItem>Alvin</CollectionItem>
-                            <CollectionItem>Alvin</CollectionItem>
-                            <CollectionItem>Alvin</CollectionItem>
-                        </Collection>
-                    </CollapsibleItem>
-                    <CollapsibleItem header='Second' icon='place'>
-                        Lorem ipsum dolor sit amet.
-                    </CollapsibleItem>
-                    <CollapsibleItem header='Third' icon='whatshot'>
-                        Lorem ipsum dolor sit amet.
-                    </CollapsibleItem> */}
                 </Collapsible>
             </div>
         )

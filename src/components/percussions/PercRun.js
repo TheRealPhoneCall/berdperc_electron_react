@@ -14,11 +14,7 @@ export default class PercRun extends React.Component {
         super()
 
     }
-    // TODO: Learn how to initiate js elements/plugins
-    initiateSelect(){
-        const select = document.querySelector('select')
-        select.material_select();
-    }
+    
     render() {
         console.log("Rendering Percussion Run Component")
         const perc = PercAPI.get(

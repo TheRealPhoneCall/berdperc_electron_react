@@ -32,7 +32,7 @@ export default class Home extends React.Component {
         {
           this.state.percussions.map(function (percussion, i){
             return (
-              <div>
+              <div key={i}>
                 <Perc key={i} perc={percussion}/>
               </div>
             )
