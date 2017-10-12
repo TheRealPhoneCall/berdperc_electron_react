@@ -3,7 +3,7 @@ import jsonfile from 'jsonfile'
 
 import Perc from '../components/percussions/Perc';
 
-import PercAPI from '../data/api'
+import {PercAPI} from '../data/api'
 
 const utils = require('../utils')
 

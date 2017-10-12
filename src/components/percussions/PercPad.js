@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Input, Card, Row, Col, Tabs, Tab } from 'react-materialize'
 
-import PercAPI from '../../data/api'
+import { PercAPI } from '../../data/api'
 
 const path = require('path')
 

@@ -1,0 +1,99 @@
+[
+    {
+        "name": "Kick",
+        "maps": [
+            {"name": "Kick", "note":36 }
+        ]
+    },
+    {
+        "name": "Snare",
+        "maps":[
+            {"name": "Snare RimShot", "note":40 },
+            {"name": "Snare Open Hit", "note":38 },
+            {"name": "Snare Shallow RimShot", "note":39 },
+            {"name": "Snare SideStick", "note":37 },
+            {"name": "Snare Shallow Hit", "note":126 },
+            {"name": "Snare Rimclick", "note":125 },
+            {"name": "Snare Sticks", "note":31 }
+        ]
+    },
+    {
+        "name": "Hi-Hat",
+        "maps":[
+            {"name": "HH Foot Close", "note":44 },
+            {"name": "HH Closed1 Tip", "note":42 },
+            {"name": "HH Closed1 Shaft", "note":124 },
+            {"name": "HH Closed2 Tip", "note":123 },
+            {"name": "HH Closed2 Shaft", "note":122 },
+            {"name": "HH Closed Bell", "note":121 }
+        ]
+    },
+    {
+        "name": "Extra",
+        "maps":[
+            {"name": "Extra A", "note":56 },
+            {"name": "Extra B", "note":90 },
+            {"name": "Extra C", "note":91 },
+            {"name": "Extra D", "note":92 }
+        ]
+    },
+    {
+        "name": "Tom 1",
+        "maps":[
+            {"name": "Tom 1 Open Hit", "note":50 },
+            {"name": "Tom 1 RimShot", "note":113 }
+        ]
+    },
+    {
+        "name": "Tom 2",
+        "maps":[
+            {"name": "Tom 2 Open Hit", "note":47 },
+            {"name": "Tom 2 RimShot", "note":48 }
+        ]
+    },
+    {
+        "name": "Tom 3",
+        "maps":[
+            {"name": "Tom 3 Open Hit", "note":43 },
+            {"name": "Tom 3 RimShot", "note":45 }
+        ]
+    },
+    {
+        "name": "Tom 4",
+        "maps":[
+            {"name": "Tom 4 Open Hit", "note":41 },
+            {"name": "Tom 4 RimShot", "note":114 }
+        ]
+    },
+    {
+        "name": "Cym 1",
+        "maps":[
+            {"name": "Cymbal 1", "note":49 },
+            {"name": "Cymbal 1 Choke", "note":112 }
+        ]
+    },
+    {
+        "name": "Cym 2",
+        "maps":[
+            {"name": "Cymbal 2", "note":57 },
+            {"name": "Cymbal 2 Choke", "note":111 }
+        ]
+    },
+    {
+        "name": "Cym 3",
+        "maps":[
+            {"name": "Cymbal 3", "note":55 },
+            {"name": "Cymbal 3 Choke", "note":110 }
+        ]
+    },
+    {
+        "name": "Ride",
+        "maps":[
+            {"name": "Ride Tip", "note":51 },
+            {"name": "Ride Bell", "note":53 },
+            {"name": "Ride Shaft", "note":52 },
+            {"name": "Ride Choke", "note":115 },
+            {"name": "Ride CCPos Shaft<->Tip", "note":105 }
+        ]
+    }
+]

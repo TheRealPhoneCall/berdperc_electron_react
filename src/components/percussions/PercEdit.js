@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import PercAPI from '../../data/api'
+import { PercAPI } from '../../data/api'
 
 import PercCard from './PercCard'
 import PercSounds from './PercSounds'
@@ -23,10 +23,10 @@ export default class PercEdit extends React.Component {
         const img_src = path.join(__dirname, "../../images/", perc.image) 
         console.log(img_src)
         return (
-            <div id="bordered" class="section scrollspy">
-                <div class="row">
+            <div id="bordered" className="section scrollspy">
+                <div className="row">
                     <div id="page-title"><h2>{perc.name}</h2></div>
-                    <div class="col s12">
+                    <div className="col s12">
                         <PercCard perc={perc} />
                         <PercSounds perc={perc} />
                     </div>
