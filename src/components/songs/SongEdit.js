@@ -25,7 +25,8 @@ export default class PercEdit extends React.Component {
         )
         console.log(perc)
 
-        const json_file = this.props.match.params.json_file
+        
+        const json_file = this.props.match.params.json_file.toString()
         
         const img_src = path.join(__dirname, "../../images/", perc.image) 
         console.log(img_src)

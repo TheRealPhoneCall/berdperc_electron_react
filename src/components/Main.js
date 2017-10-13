@@ -32,8 +32,8 @@ export default class Main extends React.Component {
                         {/* <Route exact path="/perc/:id/edit/:pad_id" component={PercPadTab}/> */}
                         <Route exact path="/perc/:id/run" component={PercRun}/>
                         <Route exact path="/songs/:id" component={Songs}/>
-                        <Route exact path="/songs/:id/edit/:json_file/" component={SongEdit}/>
-                        <Route exact path="/songs/:id/run/:json_file/" component={SongRun}/>
+                        <Route exact path="/songs/:id/edit/:json_file" component={SongEdit}/>
+                        <Route exact path="/songs/:id/run/:json_file" component={SongRun}/>
                     </Switch>
                 </div>
             </div>          

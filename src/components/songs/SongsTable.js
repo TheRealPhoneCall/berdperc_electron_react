@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Table, Button } from 'react-materialize';
 
 import { PyShell } from '../../utils'
-
+import { ConfigAPI } from '../../data/api'
 
 
 export default class SongsTable extends React.Component {
@@ -15,26 +15,38 @@ export default class SongsTable extends React.Component {
         }
     }
 
-    handleRunClick(e, json_file, id) {
+    getJsonFile(id) {
+        for (let i = 0; i < this.props.songs.length; i++) {
+            if (i === id){
+                let obj = this.props.songs[i]
+                return `${obj.name}.json`
+            }
+            
+        }
+    }
+
+    handleRunClick(e, id) {
         console.log("handleRunClick")
         console.log(e.target)
+        const json_file = this.getJsonFile(id)
         console.log(json_file)
         // TODO: Make ID dynamic as well
         // this.props.history.push(`/songs/0/run/${json_file}/`)
         this.setState({is_redirect: true})
-        this.setState({redirect_to: `/songs/0/run/${json_file}/`})
+        this.setState({redirect_to: `/songs/0/run/${json_file}`})
         // TODO: Make a logic based on success of the python call
         PyShell.arduino_std("COM5", "31250", json_file)
     }
 
-    handleEditClick(e, json_file, id) {
+    handleEditClick(e, id) {
         console.log("handleEditClick")
         console.log(e.target)
+        const json_file = this.getJsonFile(id)
         console.log(json_file)
         // TODO: Make ID dynamic as well
         // this.props.history.push(`/songs/0/edit/${json_file}/`)
         this.setState({is_redirect: true})
-        this.setState({redirect_to: `/songs/0/edit/${json_file}/`})        
+        this.setState({redirect_to: `/songs/0/edit/${json_file}`})        
     }
 
     render() {
