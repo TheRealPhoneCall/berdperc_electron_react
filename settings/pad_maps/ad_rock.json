@@ -5,6 +5,7 @@
     "plugin_map": "GM & FPC",
     "description": "",
     "used_for": "Generic Rock Songs",
+    "Genre": "Rock",
     "maps": [
         {
             "pad0": {

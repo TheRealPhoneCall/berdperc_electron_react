@@ -5,6 +5,7 @@
     "plugin_map": "FPC",
     "description": "",
     "used_for": "Generic Digital Pads Controller",
+    "Genre": "Modern",
     "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
     "maps": [
         {

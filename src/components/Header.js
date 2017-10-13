@@ -13,10 +13,13 @@ import {PercAPI} from '../data/api'
 export default class Header extends React.Component {
 
     render() {
+        const percussions = PercAPI.all()
         const collapsibleItemClass = "sidebard-header collapsible-header waves-effect waves-teal" 
         const collapsibleSubItemClass = "sidebard-header waves-effect waves-teal"    
-        const normalItemClass = "sidebard-header non-collapsible-header waves-effect waves-teal"       
-        const percussions = PercAPI.all()
+        const noncollapsibleItemClass = "sidebard-header non-collapsible-header waves-effect waves-teal"       
+        const noncollapsibleItemStyle = {
+            paddingLeft: "16px"
+        }
         return (
             <header>
                 <div className="container">
@@ -28,7 +31,7 @@ export default class Header extends React.Component {
                     </li>
                     
                     <ul className="collapsible collapsible-accordion">
-                        <li className="bold"><NavLink activeClassName={`${normalItemClass} active`} to="/">Home</NavLink></li>
+                        <li className="bold"><NavLink activeClassName={`${noncollapsibleItemClass} active`} style={noncollapsibleItemStyle} to="/">Home</NavLink></li>
                         <li className="bold"><a className={collapsibleItemClass}>Percussions</a>
                             <div className="collapsible-body">
                                 <ul>                                    
@@ -67,9 +70,9 @@ export default class Header extends React.Component {
                                 </ul>
                             </div>
                         </li>
-                        <li className="bold"><Link to="/settings" className={normalItemClass}>Settings</Link></li>
-                        <li className="bold"><a href="#" className={normalItemClass}>DAW</a></li>
-                        <li className="bold"><a href="#" className={normalItemClass}>Plugins</a></li>
+                        <li className="bold"><Link to="/settings" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Settings</Link></li>
+                        <li className="bold"><a href="#" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>DAW</a></li>
+                        <li className="bold"><a href="#" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Plugins</a></li>
                     </ul> 
                 </ul>
             </header>
