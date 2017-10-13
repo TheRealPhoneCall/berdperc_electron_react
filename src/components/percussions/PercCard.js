@@ -10,11 +10,13 @@ const path = require('path')
 
 
 export default class PercCard extends React.Component {
-    constructor() {
-        super()
-        const config_map =  ConfigAPI.all('ad_basic.json')
+    constructor(props) {
+        super(props)
+        const json_file = this.props.json_file
+        const config_map =  ConfigAPI.all(json_file)
         this.state = {
             config_map: config_map,
+            json_file: json_file,
             map: config_map.maps[0],
             pad: "pad0"
         }

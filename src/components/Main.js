@@ -8,8 +8,11 @@ import Other from '../pages/Other';
 import Settings from '../pages/Settings';
 import PercRun from '../components/percussions/PercRun';
 import PercEdit from '../components/percussions/PercEdit';
+import Songs from '../pages/Songs';
+import SongRun from '../components/songs/SongRun';
+import SongEdit from '../components/songs/SongEdit';
 import PercPadTab from '../components/percussions/PercPadTab';
-import Songs from '../components/songs/Songs';
+
 
 
 // render on page
@@ -29,6 +32,8 @@ export default class Main extends React.Component {
                         {/* <Route exact path="/perc/:id/edit/:pad_id" component={PercPadTab}/> */}
                         <Route exact path="/perc/:id/run" component={PercRun}/>
                         <Route exact path="/songs/:id" component={Songs}/>
+                        <Route exact path="/songs/:id/edit/:json_file/" component={SongEdit}/>
+                        <Route exact path="/songs/:id/run/:json_file/" component={SongRun}/>
                     </Switch>
                 </div>
             </div>          

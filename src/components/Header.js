@@ -7,13 +7,14 @@ import Home from '../pages/Home';
 import Other from '../pages/Other';
 
 // Modules
-import {PercAPI} from '../data/api'
+import { PercAPI, SongsAPI } from '../data/api'
 
 // render on page
 export default class Header extends React.Component {
 
     render() {
         const percussions = PercAPI.all()
+        const genres = SongsAPI.all()
         const collapsibleItemClass = "sidebard-header collapsible-header waves-effect waves-teal" 
         const collapsibleSubItemClass = "sidebard-header waves-effect waves-teal"    
         const noncollapsibleItemClass = "sidebard-header non-collapsible-header waves-effect waves-teal"       
@@ -48,12 +49,13 @@ export default class Header extends React.Component {
                         <li className="bold"><a className={collapsibleItemClass}>Projects</a>
                             <div className="collapsible-body">
                                 <ul>
-                                    <li><a href="pages/rock.html" className={collapsibleSubItemClass}>Rock</a></li>
-                                    <li><a href="#" className={collapsibleSubItemClass}>Reggae</a></li>
-                                    <li><a href="#" className={collapsibleSubItemClass}>EDM</a></li>
-                                    <li><a href="#" className={collapsibleSubItemClass}>Dubstep</a></li>
-                                    <li><a href="#" className={collapsibleSubItemClass}>Chill</a></li>
-                                    <li><a href="#" className={collapsibleSubItemClass}>Acoustic</a></li>
+                                    {
+                                        genres.map(function (genre, i){
+                                            return ( 
+                                                <li key={i}><Link to={`/songs/${i}`} className={collapsibleSubItemClass}>{genre.genre}</Link></li>                                                 
+                                            )
+                                        })
+                                    }
                                 </ul>
                             </div>
                         </li>

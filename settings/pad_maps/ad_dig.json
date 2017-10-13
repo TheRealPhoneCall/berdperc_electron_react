@@ -5,7 +5,7 @@
     "plugin_map": "GM",
     "description": "",
     "used_for": "Incubus - Dig",
-    "Genre": "Alternative",
+    "genre": "Alternative",
     "maps": [
         {
             "pad0": {

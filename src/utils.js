@@ -1,5 +1,6 @@
 import jsonfile from 'jsonfile'
 import path from 'path'
+import PythonShell from 'python-shell'
 
 const PyShell = {
     arduino_std: function(com, baud_rate, json_file) {
@@ -11,9 +12,9 @@ const PyShell = {
 
         var options = {
             mode: 'text',
-            pythonPath: 'C:/Python27',
+            // pythonPath: 'C:/Python27',
             pythonOptions: ['-u'],
-            scriptPath: path.join(__dirname, 'main.py'),
+            //scriptPath: path.join(__dirname, 'main.py'),
             args: ['-t', 'arduino_std', '-cp', com, '-br', baud_rate, '-pc', json_file]
         };
 

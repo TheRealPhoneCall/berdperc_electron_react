@@ -1,17 +1,17 @@
 {
-    "Genres": [
-        "Rock",
-        "Alternative",
-        "Pop",
-        "Modern",
-        "Reggae",
-        "EDM",
-        "Trap",
-        "Remix",
-        "Dubstep",
-        "Acoustic",
-        "Country",
-        "Chill",
-        "Other"
+    "genres": [
+        {"id":0, "genre": "Rock"},
+        {"id":1, "genre": "Alternative"},
+        {"id":2, "genre": "Pop"},
+        {"id":3, "genre": "Modern"},
+        {"id":4, "genre": "Reggae"},
+        {"id":5, "genre": "EDM"},
+        {"id":6, "genre": "Trap"},
+        {"id":7, "genre": "Remix"},
+        {"id":8, "genre": "Dubstep"},
+        {"id":9, "genre": "Acoustic"},
+        {"id":10, "genre": "Country"},
+        {"id":11, "genre": "Chill"},
+        {"id":12, "genre": "Other"}
     ]
 }
