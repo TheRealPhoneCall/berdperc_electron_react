@@ -1,12 +1,22 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { Collection, Collapsible, CollapsibleItem, CollectionItem } from 'react-materialize'
 
+// Components
 import Home from '../pages/Home';
 import Other from '../pages/Other';
 
+// Modules
+import {PercAPI} from '../data/api'
+
 // render on page
 export default class Header extends React.Component {
-    render() {        
+
+    render() {
+        const collapsibleItemClass = "sidebard-header collapsible-header waves-effect waves-teal" 
+        const collapsibleSubItemClass = "sidebard-header waves-effect waves-teal"    
+        const normalItemClass = "sidebard-header non-collapsible-header waves-effect waves-teal"       
+        const percussions = PercAPI.all()
         return (
             <header>
                 <div className="container">
@@ -16,45 +26,51 @@ export default class Header extends React.Component {
                     <li className="logo">
                         <img src="assets/logo/logo.jpg" width="290px" height="100%"></img>
                     </li>
+                    
                     <ul className="collapsible collapsible-accordion">
-                        <li className="bold"><a className="collapsible-header waves-effect waves-teal">Percussions</a>
+                        <li className="bold"><NavLink activeClassName={`${normalItemClass} active`} to="/">Home</NavLink></li>
+                        <li className="bold"><a className={collapsibleItemClass}>Percussions</a>
                             <div className="collapsible-body">
-                                <ul>
-                                    <li><NavLink activeClassName="active" to="/">Home</NavLink></li>
-                                    <li><NavLink activeClassName="active" to="/other">Other</NavLink></li>
-                                    <li><a href="#">berdpad</a></li>
-                                    <li><a href="#">berdpad pro</a></li>
-                                    <li><a href="#">berdrums</a></li>
-                                    <li><a href="#">berdrums pro</a></li>
+                                <ul>                                    
+                                    {
+                                        percussions.map(function (percussion, i){
+                                            return ( 
+                                                <li key={i}><Link to={`/perc/${percussion.id}/edit`} className={collapsibleSubItemClass}>{percussion.name}</Link></li>                                                 
+                                            )
+                                        })
+                                    }
                                 </ul>
                             </div>
                         </li>
-                        <li className="bold"><a className="collapsible-header waves-effect waves-teal">Projects</a>
+                        <li className="bold"><a className={collapsibleItemClass}>Projects</a>
                             <div className="collapsible-body">
                                 <ul>
-                                    <li ><a href="pages/rock.html">Rock</a></li>
-                                    <li><a href="#">Reggae</a></li>
-                                    <li><a href="#">EDM</a></li>
-                                    <li><a href="#">Dubstep</a></li>
-                                    <li><a href="#">Chill</a></li>
-                                    <li><a href="#">Acoustic</a></li>
+                                    <li><a href="pages/rock.html" className={collapsibleSubItemClass}>Rock</a></li>
+                                    <li><a href="#" className={collapsibleSubItemClass}>Reggae</a></li>
+                                    <li><a href="#" className={collapsibleSubItemClass}>EDM</a></li>
+                                    <li><a href="#" className={collapsibleSubItemClass}>Dubstep</a></li>
+                                    <li><a href="#" className={collapsibleSubItemClass}>Chill</a></li>
+                                    <li><a href="#" className={collapsibleSubItemClass}>Acoustic</a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li className="bold"><a className="collapsible-header waves-effect waves-teal">Practice<span className="new badge"></span></a>
+                        <li className="bold"><a className={collapsibleItemClass}>Practice<span className="new badge"></span></a>
                             <div className="collapsible-body">
                                 <ul>
-                                    <li><a href="#">beginner berdcajon</a></li>
-                                    <li><a href="#">advanced berdcajon</a></li>
-                                    <li><a href="#">beginner berdpad</a></li>
-                                    <li><a href="#">advanced berdpad</a></li>
+                                    {
+                                        percussions.map(function (percussion, i){
+                                            return ( 
+                                                <li key={i}><Link to={`/perc/${percussion.id}/run`} className={collapsibleSubItemClass}>Practice {percussion.name}</Link></li>                                                 
+                                            )
+                                        })
+                                    }
                                 </ul>
                             </div>
                         </li>
-                        <li className="bold"><Link to="/settings" className="waves-effect waves-teal">Settings</Link></li>
-                        <li className="bold"><a href="#" className="waves-effect waves-teal">DAW</a></li>
-                        <li className="bold"><a href="#" className="waves-effect waves-teal">Plugins</a></li>
-                    </ul>
+                        <li className="bold"><Link to="/settings" className={normalItemClass}>Settings</Link></li>
+                        <li className="bold"><a href="#" className={normalItemClass}>DAW</a></li>
+                        <li className="bold"><a href="#" className={normalItemClass}>Plugins</a></li>
+                    </ul> 
                 </ul>
             </header>
         )

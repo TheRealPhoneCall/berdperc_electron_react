@@ -13,7 +13,7 @@ const PercAPI = {
       const isPerc = p => p.id === id
       return this.percussions().find(isPerc)
     }
-  }
+}
 
 const MidiMapAPI = {
     midi_map: function(file) {
@@ -28,7 +28,7 @@ const MidiMapAPI = {
       const isMap = p => p.id === id
       return this.midi_map().find(isMap)
     }
-  }
+}
 
 const ConfigAPI = {
     config: function(file) {

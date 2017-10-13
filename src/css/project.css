@@ -1,6 +1,17 @@
+/*  Nav items styles */
+.sidebard-header .non-collapsible-header {
+    padding-left: 16px !important; 
+    padding-right: 16px !important; 
+}
+
+.sidebard-header .collapsible-header {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
 .collapsible-body{
     padding: 0;
-  }
+}
 
 /*  berdcajon v1 padding */
 .pads-berdcajon_v1{
