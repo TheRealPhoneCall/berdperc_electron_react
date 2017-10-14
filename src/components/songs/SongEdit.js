@@ -39,8 +39,7 @@ export default class PercEdit extends React.Component {
                         <PercSounds perc={perc} />
                     </div>
                 </div>
-            </div>
-            
+            </div>            
         )
     }     
 };

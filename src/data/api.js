@@ -35,7 +35,7 @@ const MidiMapAPI = {
 const ConfigAPI = {
     configs: function(genre){
         var configs = []
-        const padMapPath = path.join(__dirname, "../../settings/pad_maps") 
+        const padMapPath = path.join(__dirname, "../../settings/pad_maps/berdcajon_v1") 
         console.log(padMapPath)
         const dir = fs.readdirSync(padMapPath)
         // loop through file system
@@ -56,13 +56,13 @@ const ConfigAPI = {
     all_configs: function(genre){
         return this.configs(genre)
     },
-    config: function(file) {
-        const object = jsonfile.readFileSync(`./settings/pad_maps/${file}`)
+    config: function(perc_slug, file) {
+        const object = jsonfile.readFileSync(path.join(__dirname, `../../settings/pad_maps/${perc_slug}/${file}`))
         console.log(object)
         return object;
     },
-    all: function(file) { 
-        return this.config(file)
+    all: function(perc_slug, file) { 
+        return this.config(perc_slug, file)
     },
     get: function(id) {
       const isConfig = p => p.id === id

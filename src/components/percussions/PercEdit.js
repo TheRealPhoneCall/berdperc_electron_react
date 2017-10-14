@@ -27,7 +27,7 @@ export default class PercEdit extends React.Component {
                 <div className="row">
                     <div id="page-title"><h2>{perc.name}</h2></div>
                     <div className="col s12">
-                        <PercCard perc={perc} json_file="ad_basic.json" />
+                        <PercCard perc={perc} json_file={perc.default_map} />
                         <PercSounds perc={perc} />
                     </div>
                 </div>

@@ -31,7 +31,6 @@ export default class SongsTable extends React.Component {
         const json_file = this.getJsonFile(id)
         console.log(json_file)
         // TODO: Make ID dynamic as well
-        // this.props.history.push(`/songs/0/run/${json_file}/`)
         this.setState({is_redirect: true})
         this.setState({redirect_to: `/songs/0/run/${json_file}`})
         // TODO: Make a logic based on success of the python call

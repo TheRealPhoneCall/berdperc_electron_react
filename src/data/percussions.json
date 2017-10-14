@@ -7,6 +7,7 @@
         "image": "berdcajon_v1.png",
         "image_front": "berdcajon_v1_front.png",
         "logo": "",
+        "default_map": "ad_basic.json",
         "pads": [
             {"name": "pad0", "pad_type": "analog"},
             {"name": "pad1", "pad_type": "analog"},
@@ -19,26 +20,32 @@
     {
         "id": 1,
         "name": "berdcajon v2",
+        "slug": "berdcajon_v2",
         "html_description": "A powerful acoustic cajon with electronic drum pads on the side configurable by the control panel and by the berdperc software. Unlike v1, this version has powerful accoustic sounds you can also play along with.",
         "image": "berdcajon_v2.png",
-        "image_front": "berdcajon_v2_front.png",
+        "image_front": "berdcajon_v2_side.png",
         "logo": "",
+        "default_map": "ad_basic.json",
         "pads": [
             {"name": "pad0", "pad_type": "analog"},
             {"name": "pad1", "pad_type": "analog"},
             {"name": "pad2", "pad_type": "analog"},
             {"name": "pad3", "pad_type": "analog"},
             {"name": "pad4", "pad_type": "analog"},
-            {"name": "pad5", "pad_type": "analog"}
+            {"name": "pad5", "pad_type": "analog"},
+            {"name": "pad6", "pad_type": "analog"},
+            {"name": "pad7", "pad_type": "analog"}
         ]
     },
     {
         "id": 2,
         "name": "berdpad",
+        "slug": "berdpad",
         "html_description": "An innovative table top electronic drum pads configurable by the control panel and by the berdperc software.",
         "image": "berdpad.png",
         "image_front": "berdpad_top.png",
         "logo": "",
+        "default_map": "ad_basic.json",
         "pads": [
             {"name": "pad0", "pad_type": "analog"},
             {"name": "pad1", "pad_type": "analog"},

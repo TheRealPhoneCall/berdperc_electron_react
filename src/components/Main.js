@@ -11,7 +11,6 @@ import PercEdit from '../components/percussions/PercEdit';
 import Songs from '../pages/Songs';
 import SongRun from '../components/songs/SongRun';
 import SongEdit from '../components/songs/SongEdit';
-import PercPadTab from '../components/percussions/PercPadTab';
 
 
 
@@ -29,7 +28,6 @@ export default class Main extends React.Component {
                         <Route path="/settings" component={Settings}/>
                         <Route exact path="/perc/:id/" component={PercRun}/>
                         <Route exact path="/perc/:id/edit" component={PercEdit}/>
-                        {/* <Route exact path="/perc/:id/edit/:pad_id" component={PercPadTab}/> */}
                         <Route exact path="/perc/:id/run" component={PercRun}/>
                         <Route exact path="/songs/:id" component={Songs}/>
                         <Route exact path="/songs/:id/edit/:json_file" component={SongEdit}/>

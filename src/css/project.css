@@ -30,51 +30,133 @@
     vertical-align: middle;
 }
 
-.pad-img div.pad0{
+.pad-img div.berdcajon_v1-pad0{
     position: absolute;
     top: 25%;
-    left: 45%;
+    left: 46%;
     width: 6em;
     height: 2em;    
 }
 
-.pad-img div.pad1{
+.pad-img div.berdcajon_v1-pad1{
     position: absolute;
     top: 25%;
-    left: 55%;
+    left: 54%;
     width: 6em;
     height: 2em;    
 }
 
-.pad-img div.pad2{
+.pad-img div.berdcajon_v1-pad2{
     position: absolute;
     top: 30%;
-    left: 45%;
+    left: 46%;
     width: 6em;
     height: 4em;    
 }
 
-.pad-img div.pad3{
+.pad-img div.berdcajon_v1-pad3{
     position: absolute;
     top: 30%;
-    left: 55%;
+    left: 54%;
     width: 6em;
     height: 4em;    
 }
 
-.pad-img div.pad4{
+.pad-img div.berdcajon_v1-pad4{
     position: absolute;
     top: 38%;
-    left: 45%;
+    left: 46%;
     width: 6em;
     height: 2em;    
 }
 
-.pad-img div.pad5{
+.pad-img div.berdcajon_v1-pad5{
     position: absolute;
     top: 38%;
-    left: 55%;
+    left: 54%;
     width: 6em;
     height: 2em;    
+}
+
+
+/*  berdcajon v2 padding */
+.pads-berdcajon_v2{
+    padding: 0;
+    z-index: 1000;
+    opacity: 0.1;
+    background: rebeccapurple;
+    
+}
+
+.pad-img .pads-berdcajon_v2:hover{
+    opacity: 0.3;
+}
+
+.pad-img {
+    vertical-align: middle;
+}
+
+.pad-img div.berdcajon_v2-pad0{
+    position: absolute;
+    top: 25%;
+    left: 43%;
+    width: 3.6em;
+    height: 2.7em;    
+}
+
+.pad-img div.berdcajon_v2-pad1{
+    position: absolute;
+    top: 25%;
+    left: 48%;
+    width: 8.3em;
+    height: 2.7em;    
+}
+
+.pad-img div.berdcajon_v2-pad2{
+    position: absolute;
+    top: 25%;
+    left: 59%;
+    width: 3.6em;
+    height: 2.7em;    
+}
+
+.pad-img div.berdcajon_v2-pad3{
+    position: absolute;
+    top: 30%;
+    left: 44%;
+    width: 3.1em;
+    height: 4em;    
+}
+
+.pad-img div.berdcajon_v2-pad4{
+    position: absolute;
+    top: 30%;
+    left: 48.3%;
+    width: 8.2em;
+    height: 8em;    
+}
+
+.pad-img div.berdcajon_v2-pad5{
+    position: absolute;
+    top: 30%;
+    left: 59.3%;
+    width: 3.1em;
+    height: 4em;    
+}
+
+.pad-img div.berdcajon_v2-pad6{
+    position: absolute;
+    top: 37%;
+    left: 44%;
+    width: 3.1em;
+    height: 3.7em;    
+}
+
+.pad-img div.berdcajon_v2-pad7{
+    position: absolute;
+    top: 37%;
+    left: 59.3%;
+    width: 3.1em;
+    height: 3.7em;    
 }
 
