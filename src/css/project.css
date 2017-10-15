@@ -26,6 +26,10 @@
     opacity: 0.3;
 }
 
+.pad-img .pad-hit{
+    opacity: 0.5;
+}
+
 .pad-img {
     vertical-align: middle;
 }

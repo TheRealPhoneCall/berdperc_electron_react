@@ -4,6 +4,7 @@ import { Button, Input, Card, Row, Col, Tabs, Tab } from 'react-materialize'
 
 import { PercAPI, ConfigAPI } from '../../data/api'
 import PercPad from './PercPad'
+import { PyShell } from '../../utils'
 
 const path = require('path')
 
@@ -17,7 +18,8 @@ export default class PercCard extends React.Component {
             config_map: config_map,
             json_file: json_file,
             map: config_map.maps[0],
-            pad: "pad0"
+            pad: "pad0",
+            pad_hit: null,
         }
 
         // this.handlePadClick = this.handlePadClick.bind(this);
@@ -29,10 +31,27 @@ export default class PercCard extends React.Component {
         pad = pad.split("-")[1]
         console.log(pad);
 
-        this.setState({
-            pad: pad
+        this.setState({pad})
+    }
+
+    handleRunClick(event) {
+        console.log("handleRunClick")
+        console.log(event.target)
+        const json_file = `${this.state.config_map.name}.json`
+        console.log(json_file)
+        // TODO: Make a logic based on success of the python call
+        var pyshell = PyShell.start("COM5", "31250", json_file, "text")
+        var self = this
+        pyshell.on('message', function(message){
+            console.log(message)
+            const pad_hit = parseInt(message.slice(-1));
+            console.log(pad_hit)
+            self.setState({pad_hit})
+            // setTimeout(self.setState({pad_hit: null}), 1000)
         })
     }
+
+
     
     render() {
         console.log("Rendering Percussion Card Component")
@@ -40,7 +59,9 @@ export default class PercCard extends React.Component {
         const config_map = this.state.config_map        
         const img_src = path.join(__dirname, "../../images/", perc.image_front) 
         const map = this.state.map
-        const current_pad = this.state.map[this.state.pad]        
+        const current_pad = this.state.map[this.state.pad] 
+        const pad_hit = this.state.pad_hit
+        const pad_hit_class = "pad-hit"    
         const clickHandler = this.handlePadClick.bind(this)
         
         return (
@@ -49,9 +70,17 @@ export default class PercCard extends React.Component {
                     <img src={img_src} className="z-depth-4 responsive-img"/>
                     {
                         perc.pads.map(function (pad, i){
-                            return (
-                                <div key={i} className={`pads-${perc.slug} ${perc.slug}-${pad.name}`} onClick={clickHandler}></div>
-                            )                            
+                            console.log(i, pad_hit)
+                            if (i == pad_hit){
+                                return (
+                                    <div key={i} className={`pads-${perc.slug} ${perc.slug}-${pad.name} ${pad_hit_class}`} onClick={clickHandler}></div>
+                                )
+                            } else {
+                                return (
+                                    <div key={i} className={`pads-${perc.slug} ${perc.slug}-${pad.name}`} onClick={clickHandler}></div>
+                                )
+                            }
+                                                       
                         })
                     }
                 </Col>
@@ -69,6 +98,8 @@ export default class PercCard extends React.Component {
                                 })
                             }
                         </Tabs>
+                        <Button onClick={this.handleRunClick.bind(this)}
+                                floating icon='send' className='dark_blue'/> 
                     </Row>
                 </Col>
             </Col>

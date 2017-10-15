@@ -58,7 +58,8 @@ def main(com_port, midi_port, baud_rate, pad_config):
             # else it's a note_on/note_off msg
             else:
                 # get the note from pad_map function
-                pad = pad_map["pad" + str(msg_recvd['pad'])]
+                str_pad = str(msg_recvd['pad'])
+                pad = pad_map["pad" + str_pad]
                 notes = pad["notes"]
 
                 # loop through the notes assigned on the pad
@@ -77,7 +78,7 @@ def main(com_port, midi_port, baud_rate, pad_config):
                     
                     # store midi msg then send to virtual port
                     midi.store_midi_msg(midi_msg)
-                    midi.send_midi_msg(midi_msg)
+                    midi.send_midi_msg(midi_msg, str_pad)
 
                     # end of block            
 

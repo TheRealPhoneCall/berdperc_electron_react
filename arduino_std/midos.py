@@ -60,7 +60,7 @@ class Midi(object):
         self.midi.tracks.append(midi_msg)
         return midi_msg
 
-    def send_midi_msg(self, midi_msg, port=MIDI_PORT):
+    def send_midi_msg(self, midi_msg, str_pad, port=MIDI_PORT):
         if port == self.virtual_port:
             self.outport.send(midi_msg)
         else:
@@ -68,7 +68,7 @@ class Midi(object):
             outport = mido.open_output(port)
             outport.send(midi_msg)
         
-        print "sent to '%s': \t %s" %(port, midi_msg)
+        print "sent to '%s': \t %s pad=%s" %(port, midi_msg, str_pad)
 
     def recv_midi_msg(self, midi_msg, port=MIDI_PORT):
         # TODO: Explore MIDI reading from bytes of data

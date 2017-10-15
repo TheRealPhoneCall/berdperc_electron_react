@@ -3,6 +3,25 @@ import path from 'path'
 import PythonShell from 'python-shell'
 
 const PyShell = {
+    start: function(com, baud_rate, json_file, mode){
+        // Python script called from the app
+        // example: python main.py -t arduino_std -cp COM6 -br 31250 -pc basic.json
+        var script = 'main.py';
+        
+        console.log("runPython_ArduinoSTD")
+
+        var options = {
+            mode: mode,
+            // pythonPath: 'C:/Python27',
+            pythonOptions: ['-u'],
+            //scriptPath: path.join(__dirname, 'main.py'),
+            args: ['-t', 'arduino_std', '-cp', com, '-br', baud_rate, '-pc', json_file]
+        };
+
+        var pyshell = new PythonShell(script, options);
+        
+        return pyshell;        
+    },    
     arduino_std: function(com, baud_rate, json_file) {
         // Python script called from the app
         // example: python main.py -t arduino_std -cp COM6 -br 31250 -pc basic.json

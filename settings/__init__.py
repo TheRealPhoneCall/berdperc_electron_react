@@ -32,7 +32,7 @@ SAMPLE_RATE = 44100
 # for drum pad triggers
 def pads(pad_json="basic.json"):
     # Initialize values
-    pad_json_path = "settings\pad_maps\%s" %str(pad_json)
+    pad_json_path = r"settings\pad_maps\berdcajon_v1\%s" %str(pad_json)
     try:
         with open(pad_json_path) as config_file:
             json_file = json.load(config_file)

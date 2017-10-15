@@ -18,7 +18,7 @@ MIDI_PORT = "berdrums 1"
 
 def pads(pad_json="basic.json"):
     # Initialize values
-    pad_json_path = "settings\pad_maps\%s" %pad_json
+    pad_json_path = r"settings\pad_maps\berdcajon_v1\%s" %pad_json
     try:
         with open(pad_json_path) as config_file:
             pads = json.loads(config_file)
