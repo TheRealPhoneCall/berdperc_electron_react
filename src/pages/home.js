@@ -19,6 +19,7 @@ export default class Home extends React.Component {
 
   render() {
     console.log("Home Page Rendered!")
+    // console.log(window.location.href)
 
     return (
       <div className="col s12">

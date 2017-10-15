@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, IndexRoute, Switch, Link, NavLink} from 'react-router-dom';
+import {BrowserRouter, Route, IndexRedirect, Redirect, Switch, Link, NavLink} from 'react-router-dom';
 
 import Home from '../pages/Home'
 import About from '../pages/About'
@@ -16,10 +16,15 @@ import SongEdit from '../components/songs/SongEdit';
 
 // render on page
 export default class Main extends React.Component {
+    constructor(){
+        super()
+        console.log(window.location.href)
+    }
     render() {        
         return (            
             <div className="row">
                 <div className="col s9 offset-s3">
+                    {window.location.pathname.includes('index.html') && <Redirect to="/" />}
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route path="/about" component={About}/>
@@ -33,6 +38,7 @@ export default class Main extends React.Component {
                         <Route exact path="/songs/:id/edit/:json_file" component={SongEdit}/>
                         <Route exact path="/songs/:id/run/:json_file" component={SongRun}/>
                     </Switch>
+                    
                 </div>
             </div>          
         )
