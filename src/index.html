@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>berdperc</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Compiled and minified CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
+    <link href="../node_modules/materialize-css/extras/noUiSlider/nouislider.css" rel="stylesheet">
+
+    <!-- Project CSS -->
+    <link href="./assets/css/project.css" rel="stylesheet">
+    <!--Import jQuery before materialize.js-->
+    <script src="../node_modules/hammerjs/hammer.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script src="../node_modules/materialize-css/extras/noUiSlider/nouislider.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+
+  <script>
+    require('babel-register')({
+      presets: [
+        ['env', {
+          targets: {
+            electron: "1.6.2"
+          },
+        }],
+        'react',
+      ],
+    });
+    require('./index.js');
+  </script>
+</html>

@@ -3,8 +3,10 @@ import fs from 'fs'
 import path from 'path'
 
 const PercAPI = {
-    percussions: function() {
-        const object = jsonfile.readFileSync("./src/data/percussions.json")
+    percussions: function() {        
+        // const object = jsonfile.readFileSync("./src/data/percussions.json")
+        const filePath = path.join(__dirname, "./percussions.json")
+        const object = jsonfile.readFileSync(filePath)        
         console.log(object)
         return object;
     },
@@ -19,7 +21,9 @@ const PercAPI = {
 
 const MidiMapAPI = {
     midi_map: function(file) {
-        const object = jsonfile.readFileSync(`./src/data/${file}`)
+        // const object = jsonfile.readFileSync(`./src/data/${file}`)
+        const filePath = path.join(__dirname, `./${file}`)
+        const object = jsonfile.readFileSync(filePath)
         console.log(object)
         return object;
     },
@@ -36,14 +40,13 @@ const ConfigAPI = {
     configs: function(genre){
         var configs = []
         const padMapPath = path.join(__dirname, "../../settings/pad_maps/berdcajon_v1") 
-        console.log(padMapPath)
         const dir = fs.readdirSync(padMapPath)
         // loop through file system
         console.log(dir)
         // console.log(dir)
         for(let filePath of dir) {                
             const jsonFilePath = `${padMapPath}/${filePath}`
-            const object = jsonfile.readFileSync(`${jsonFilePath}`)
+            const object = jsonfile.readFileSync(jsonFilePath)
             console.log(object, genre)
             if (object.genre == genre) {
                 configs.push(object)   
@@ -57,7 +60,8 @@ const ConfigAPI = {
         return this.configs(genre)
     },
     config: function(perc_slug, file) {
-        const object = jsonfile.readFileSync(path.join(__dirname, `../../settings/pad_maps/${perc_slug}/${file}`))
+        const filePath = path.join(__dirname, `../../settings/pad_maps/${perc_slug}/${file}`)
+        const object = jsonfile.readFileSync(filePath)
         console.log(object)
         return object;
     },
@@ -72,7 +76,10 @@ const ConfigAPI = {
 
 const SongsAPI = {
     music_lib: function() {
-        const object = jsonfile.readFileSync(`./src/data/music_library.json`)
+        // const object = jsonfile.readFileSync(`./src/data/music_library.json`)
+        const filePath = path.join(__dirname, `./music_library.json`)
+        const object = jsonfile.readFileSync(filePath)
+        
         console.log(object.genres)
         return object.genres;
     },

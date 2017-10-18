@@ -6,34 +6,149 @@
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <!-- Compiled and minified CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./node_modules/materialize-css/extras/noUiSlider/nouislider.css">
 
-    <!-- Project CSS -->
-    <link href="./src/css/project.css" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
     <!--Import jQuery before materialize.js-->
     <script src="node_modules/hammerjs/hammer.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-    <script src="./node_modules/materialize-css/extras/noUiSlider/nouislider.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <div class="container">
+        <a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
+          <i class="material-icons">menu</i></a>
+      </div>
+      <ul id="nav-mobile" class="side-nav fixed" style="transform: translateX(0px);">
+        <li class="logo">
+          <!--<a id="logo-container" href="/" class="brand-logo">
+            <object id="front-page-logo" type="image" data="assets/logo/logo.jpg">Your browser does not support SVG</object></a>-->
+            <img src="assets/logo/logo.jpg" width="290px" height="100%" style="padding:20px">
+        </li>
+        <li class="bold">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect waves-teal">Percussions</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="pages/products/berdcajon_v1.html">berdcajon v1</a></li>
+                  <li><a href="pages/products/berdcajon_v1_react.html">berdcajon v2</a></li>
+                  <li><a href="#">berdpad</a></li>
+                  <li><a href="#">berdpad pro</a></li>
+                  <li><a href="#">berdrums</a></li>
+                  <li><a href="#">berdrums pro</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header waves-effect waves-teal">Projects</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="pages/config_files/config_files.html">Rock</a></li>
+                  <li><a href="#">Reggae</a></li>
+                  <li><a href="#">EDM</a></li>
+                  <li><a href="#">Dubstep</a></li>
+                  <li><a href="#">Chill</a></li>
+                  <li><a href="#">Acoustic</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header waves-effect waves-teal">Practice<span class="new badge"></span></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="#">beginner berdcajon</a></li>
+                  <li><a href="#">advanced berdcajon</a></li>
+                  <li><a href="#">beginner berdpad</a></li>
+                  <li><a href="#">advanced berdpad</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="bold"><a href="#" class="waves-effect waves-teal">Settings</a></li>
+        <li class="bold"><a href="#" class="waves-effect waves-teal">DAW</a></li>
+        <li class="bold"><a href="#" class="waves-effect waves-teal">Plugins</a></li>
+      </ul>
+    </header>
+
+    <nav>
+      <div class="nav-wrapper grey">
+        <div class="brand-logo">
+          <!-- <img src="assets/icons/win/bw.PNG" class="brand-logo" width="60px" height="60px"  /> -->
+          <a href="#!" class="brand-logo">berdperc</a>
+        </div>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo" style="transform: translateX(-100%);">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="col s9 offset-s3">
+        <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/berdcajon_v1.png">
+              <span class="card-title">berdcajon v1</span>
+            </div>
+            <div class="card-content">
+              <p>An innovative electronic cajon, with silent pads and configurable by the control panel and by the berdperc software.</p>
+            </div>
+            <div class="card-action">
+              <button id="btn-berdcajon" class="btn waves-effect waves-light">Run</button>
+              <a href="#">Configure</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/berdcajon_v2.png">
+              <span class="card-title">berdcajon v2</span>
+            </div>
+            <div class="card-content">
+              <p>A powerful acoustic cajon with electronic drum pads on the side configurable by the control panel and by the berdperc software.</p>
+              <p>Unlike v1, this version has powerful accoustic sounds you can also play along with.</p>
+            </div>
+            <div class="card-action">
+              <button id="btn-berdcajon" class="btn waves-effect waves-light">Run</button>
+              <a href="#">Configure</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/berdpad.png">
+              <span class="card-title">berdpad</span>
+            </div>
+            <div class="card-content">
+              <p>An innovative table top electronic drum pads configurable by the control panel and by the berdperc software.</p>
+            </div>
+            <div class="card-action">
+                <button class="btn waves-effect waves-light">Run</button>
+              <a href="#">Configure</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </body>
 
+
   <script>
-    require('babel-register')({
-      presets: [
-        ['env', {
-          targets: {
-            electron: "1.6.2"
-          },
-        }],
-        'react',
-      ],
-    });
-    require('./src/index.js');
+    // You can also require other files to run in this process
+    require('renderer.js')
   </script>
 </html>

@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route, IndexRoute, Switch, Link, NavLink} from 'react-router-dom';
-// import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
-import Home from './pages/Home'
-import About from './pages/About'
-import Help from './pages/Help'
-import Other from './pages/Other';
-import Settings from './pages/Settings';
-import Layout from './components/Layout'
-import Header from './components/Header'
-import Nav from './components/Nav'
+import Home from './js/pages/Home'
+import About from './js/pages/About'
+import Help from './js/pages/Help'
+import Other from './js/pages/Other';
+import Settings from './js/pages/Settings';
+import Layout from './js/components/Layout'
+import Header from './js/components/Header'
+import Nav from './js/components/Nav'
 
 // render on page
 ReactDOM.render(
