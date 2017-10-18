@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { connect } from "react-redux"
 import jsonfile from 'jsonfile'
 
@@ -14,7 +14,8 @@ import { utils } from '../utils'
 
 @connect((store) => {
   return {
-    percs: store.percs.percs
+    percs: store.percs.percs,
+    perc: store.percs.perc,
   };
 })
 export default class Home extends React.Component {

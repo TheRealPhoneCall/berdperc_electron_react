@@ -20,9 +20,8 @@ export default class PercCard extends React.Component {
             map: config_map.maps[0],
             pad: "pad0",
             pad_hit: null,
+            pad_hit_class: ""
         }
-
-        // this.handlePadClick = this.handlePadClick.bind(this);
     }
 
     handlePadClick(event) {
@@ -44,13 +43,16 @@ export default class PercCard extends React.Component {
         pyshell.on('message', (message) => {
             console.log(message)
             const pad_hit = parseInt(message.slice(-1));
-            console.log(pad_hit)
-            self.setState({pad_hit})
-            // setTimeout(self.setState({pad_hit: null}), 1000)
+            if (!isNaN(pad_hit)){
+                const pad = "pad" + pad_hit
+                console.log(pad_hit, pad)
+                self.setState({pad_hit, pad, pad_hit_class: "pad-hit"})
+                setTimeout(() => {
+                    this.setState({ pad_hit_class: "" });
+                }, 250);
+            }            
         })
     }
-
-
     
     render() {
         console.log("Rendering Percussion Card Component")
@@ -60,7 +62,7 @@ export default class PercCard extends React.Component {
         const map = this.state.map
         const current_pad = this.state.map[this.state.pad] 
         const pad_hit = this.state.pad_hit
-        const pad_hit_class = "pad-hit"    
+        const pad_hit_class = this.state.pad_hit_class  
         const clickHandler = this.handlePadClick.bind(this)
         
         return (

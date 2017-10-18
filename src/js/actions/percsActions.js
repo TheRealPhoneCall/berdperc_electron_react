@@ -4,41 +4,37 @@ import { PercAPI } from "../../data/api"
 export function fetchPercs() {
   return function(dispatch) {
     dispatch({type: "FETCH_PERCS"});
-    
-    // FOR ASYNC REQUESTS
-    // axios.get("http://rest.learncode.academy/api/reacttest/tweets")
-    //   .then((response) => {
-    //     dispatch({type: "FETCH_PERCS_FULFILLED", payload: response.data})
-    //   })
-    //   .catch((err) => {
-    //     dispatch({type: "FETCH_PERCS_REJECTED", payload: err})
-    //   })
 
     const percs = PercAPI.all()
-    dispatch({type: "FETCH_PERCS_FULFILLED", payload: percs})
+    dispatch({type: "FETCH_PERCS_FULFILLED", payload: { percs }})
   }
 }
 
-export function addPerc(id, text) {
+export function addPerc(last_id, percAdded) {
+  const idAdded = last_id + 1
   return {
     type: 'ADD_PERC',
-    payload: {
-      id,
-      text,
-    },
+    payload: { id, percAdded }
   }
 }
 
-export function updatePerc(id, text) {
+export function getPerc(id) {
+  return {
+    type: 'GET_PERC',
+    payload: { id }
+  }
+}
+
+export function updatePerc(id, percUpdated) {
   return {
     type: 'UPDATE_PERC',
-    payload: {
-      id,
-      text,
-    },
+    payload: { id, percUpdated }
   }
 }
 
 export function deletePerc(id) {
-  return { type: 'DELETE_PERC', payload: id}
+  return { 
+    type: 'DELETE_PERC', 
+    payload: { id }
+  }
 }

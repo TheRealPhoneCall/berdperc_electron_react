@@ -31,9 +31,12 @@ function createWindow() {
     slashes: true
   }))
   // mainWindow.loadURL('http://localhost:3000/')
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  if (process.env.NODE_ENV !== 'production') {
+    // require('electron-react-devtools').inject()
+    // Open the DevTools.
+    mainWindow.webContents.openDevTools()
+  }
+  
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

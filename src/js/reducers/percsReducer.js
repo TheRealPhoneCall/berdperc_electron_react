@@ -8,7 +8,6 @@ const initialState = {
 }
 
 export default function reducer(state=initialState, action) {
-
     switch (action.type) {
       case "FETCH_PERCS": {
         return {...state, fetching: true}
@@ -21,36 +20,43 @@ export default function reducer(state=initialState, action) {
           ...state,
           fetching: false,
           fetched: true,
-          percs: action.payload,
+          percs: action.payload.percs
         }
       }
       case "ADD_PERC": {
         return {
           ...state,
-          percs: [...state.percs, action.payload],
+          percs: [...state.percs, action.payload.perc],
+          perc: action.payload.perc
         }
       }
       case "GET_PERC": {
+        const percs = [...state.percs]
+        const percIndex = percs.findIndex(perc => perc.id === action.payload.id)
+        const perc = percs[percIndex]
+        console.log("perc:", perc)
         return {
           ...state,
-          perc: state.percs.findIndex(perc => perc.id === id),
+          perc: perc
         }
       }
       case "UPDATE_PERC": {
-        const { id, text } = action.payload
+        const { id, percUpdated } = action.payload
         const newPercs = [...state.percs]
-        const percToUpdate = newPercs.findIndex(perc => perc.id === id)
-        newPercs[percToUpdate] = action.payload;
+        const percIdToUpdate = newPercs.findIndex(perc => perc.id === id)
+        newPercs[percIdToUpdate] = percUpdated;
 
         return {
           ...state,
           percs: newPercs,
+          perc: percUpdated
         }
       }
       case "DELETE_PERC": {
+        let id = action.payload.id
         return {
           ...state,
-          percs: state.percs.filter(perc => perc.id !== action.payload),
+          percs: state.percs.filter(perc => perc.id !== id)
         }
       }
     }

@@ -14,8 +14,14 @@ const PercAPI = {
         return this.percussions()
     },
     get: function(id) {
-      const isPerc = p => p.id === id
-      return this.percussions().find(isPerc)
+        const isPerc = p => p.id === id
+        return this.percussions().find(isPerc)
+    }, 
+    set: function(){
+
+    },
+    save: function(){
+
     }
 }
 
@@ -31,8 +37,11 @@ const MidiMapAPI = {
         return this.midi_map(file)
     },
     get: function(id) {
-      const isMap = p => p.id === id
-      return this.midi_map().find(isMap)
+        const isMap = p => p.id === id
+        return this.midi_map().find(isMap)
+    },
+    save: function(){
+        
     }
 }
 
@@ -69,8 +78,11 @@ const ConfigAPI = {
         return this.config(perc_slug, file)
     },
     get: function(id) {
-      const isConfig = p => p.id === id
-      return this.config().find(isConfig)
+        const isConfig = p => p.id === id
+        return this.config().find(isConfig)
+    },
+    save: function(){
+        
     }
 }
 
@@ -87,8 +99,11 @@ const SongsAPI = {
         return this.music_lib()
     },
     get: function(id) {
-      const isConfig = p => p.id === id
-      return this.music_lib().find(isConfig)
+        const isConfig = p => p.id === id
+        return this.music_lib().find(isConfig)
+    },
+    save: function(){
+        
     }
 }
   
