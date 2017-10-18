@@ -8,8 +8,8 @@ import Main from './Main';
 
 
 
-// render on page
 export default class Layout extends React.Component {
+    
     render() {        
         return (
             <div>

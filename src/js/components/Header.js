@@ -73,7 +73,7 @@ export default class Header extends React.Component {
                             </div>
                         </li>
                         <li className="bold"><Link to="/settings" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Settings</Link></li>
-                        <li className="bold"><a href="#" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>DAW</a></li>
+                        <li className="bold"><Link to="/redux" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Redux</Link></li>
                         <li className="bold"><a href="#" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Plugins</a></li>
                     </ul> 
                 </ul>
