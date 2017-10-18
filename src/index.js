@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, IndexRoute, Switch, Link, NavLink} from 'react-router-dom';
+import { BrowserRouter, Route, IndexRoute, Switch, Link, NavLink } from 'react-router-dom';
+import { Provider } from "react-redux"
 
 import Home from './js/pages/Home'
 import About from './js/pages/About'
@@ -11,11 +12,15 @@ import Layout from './js/components/Layout'
 import Header from './js/components/Header'
 import Nav from './js/components/Nav'
 
+import store from "./store"
+
 // render on page
 ReactDOM.render(
-    <BrowserRouter>
-        <Layout />
-    </BrowserRouter>,
+    <Provider store={store}>
+        <BrowserRouter>
+            <Layout />
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('app')
 );
 

@@ -14,14 +14,19 @@
   "keywords": [
     "Electron",
     "berdperc",
-    "python arduino node drums"
+    "python arduino node react drums"
   ],
   "author": "berdperc_team",
   "license": "CC0-1.0",
   "devDependencies": {
+    "axios": "^0.16.2",
+    "babel-loader": "^6.2.0",
     "babel-core": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
@@ -40,13 +45,14 @@
     "react-materialize": "^1.0.15",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-redux": "^4.4.5",
     "redux": "^3.7.2",
-    "should": "^6.0.0"
-  },
-  "dependencies": {
-    "axios": "^0.16.2",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.4.1",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "should": "^6.0.0"
+  },
+  "dependencies": {   
+    
   }
 }
