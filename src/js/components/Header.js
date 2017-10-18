@@ -37,7 +37,7 @@ export default class Header extends React.Component {
                             <div className="collapsible-body">
                                 <ul>                                    
                                     {
-                                        percussions.map(function (percussion, i){
+                                        percussions.map((percussion, i) => {
                                             return ( 
                                                 <li key={i}><Link to={`/perc/${percussion.id}/edit`} className={collapsibleSubItemClass}>{percussion.name}</Link></li>                                                 
                                             )
@@ -50,7 +50,7 @@ export default class Header extends React.Component {
                             <div className="collapsible-body">
                                 <ul>
                                     {
-                                        genres.map(function (genre, i){
+                                        genres.map((genre, i) => {
                                             return ( 
                                                 <li key={i}><Link to={`/songs/${i}`} className={collapsibleSubItemClass}>{genre.genre}</Link></li>                                                 
                                             )
@@ -63,7 +63,7 @@ export default class Header extends React.Component {
                             <div className="collapsible-body">
                                 <ul>
                                     {
-                                        percussions.map(function (percussion, i){
+                                        percussions.map((percussion, i) => {
                                             return ( 
                                                 <li key={i}><Link to={`/perc/${percussion.id}/run`} className={collapsibleSubItemClass}>Practice {percussion.name}</Link></li>                                                 
                                             )

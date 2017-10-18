@@ -21,12 +21,12 @@ export default class PercSounds extends React.Component {
             <div className="col s3">   
                 <Collapsible>
                     {
-                        this.state.midi_maps.map(function (midi_map, i){
+                        this.state.midi_maps.map((midi_map, i) => {
                             return (
                                 <CollapsibleItem key={i} header={midi_map.name}>
                                     <Collection>
                                         {
-                                            midi_map.maps.map(function (note, j){
+                                            midi_map.maps.map((note, j) => {
                                                 return (
                                                     <CollectionItem key={j} note={note.note}>{note.name}</CollectionItem>
                                                 )                                                

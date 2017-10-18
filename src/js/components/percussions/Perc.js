@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const path = require('path')
 
-
 export default class Perc extends React.Component {
     constructor() {
         super()

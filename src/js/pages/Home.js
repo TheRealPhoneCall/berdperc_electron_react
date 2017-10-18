@@ -1,35 +1,39 @@
 import React from 'react';
+import { connect } from "react-redux"
 import jsonfile from 'jsonfile'
 
+// components
 import Perc from '../components/percussions/Perc';
 
-import {PercAPI} from '../../data/api'
+// actions
+import { fetchPercs } from "../actions/percsActions"
 
-const utils = require('../utils')
+// utils
+import { PercAPI } from '../../data/api'
+import { utils } from '../utils'
 
-
+@connect((store) => {
+  return {
+    percs: store.percs.percs
+  };
+})
 export default class Home extends React.Component {
-
   constructor() {
     super();
-    this.state = {
-      percussions: PercAPI.all()
-    }
+  }
+
+  componentWillMount() {
+    this.props.dispatch(fetchPercs())
   }
 
   render() {
     console.log("Home Page Rendered!")
-    // console.log(window.location.href)
-
+    const percs = this.props.percs
     return (
       <div className="col s12">
         {
-          this.state.percussions.map(function (percussion, i){
-            return (
-              <div key={i}>
-                <Perc key={i} perc={percussion}/>
-              </div>
-            )
+          percs.map((perc, i) => {
+            return <div key={i}><Perc key={i} perc={perc}/></div>  
           })
         }
       </div>

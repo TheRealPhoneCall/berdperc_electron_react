@@ -39,10 +39,9 @@ export default class PercCard extends React.Component {
         console.log(event.target)
         const json_file = `${this.state.config_map.name}.json`
         console.log(json_file)
-        // TODO: Make a logic based on success of the python call
         var pyshell = PyShell.start("COM5", "31250", json_file, "text")
         var self = this
-        pyshell.on('message', function(message){
+        pyshell.on('message', (message) => {
             console.log(message)
             const pad_hit = parseInt(message.slice(-1));
             console.log(pad_hit)
@@ -69,8 +68,7 @@ export default class PercCard extends React.Component {
                 <Col s={12} className="pad-img">
                     <img src={img_src} className="z-depth-4 responsive-img"/>
                     {
-                        perc.pads.map(function (pad, i){
-                            console.log(i, pad_hit)
+                        perc.pads.map((pad, i) => {
                             if (i == pad_hit){
                                 return (
                                     <div key={i} className={`pads-${perc.slug} ${perc.slug}-${pad.name} ${pad_hit_class}`} onClick={clickHandler}></div>
@@ -89,7 +87,7 @@ export default class PercCard extends React.Component {
                     <Row>
                         <Tabs className='tab-demo z-depth-1'>
                             {
-                                current_pad.notes.map(function (note, i){
+                                current_pad.notes.map((note, i) => {
                                     return (
                                         <Tab key={i} title={note.name} active>
                                             <PercPad key={i} note={note}/>
