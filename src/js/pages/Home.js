@@ -5,7 +5,7 @@ import Perc from '../components/percussions/Perc';
 
 import {PercAPI} from '../../data/api'
 
-const utils = require('../../utils')
+const utils = require('../utils')
 
 
 export default class Home extends React.Component {

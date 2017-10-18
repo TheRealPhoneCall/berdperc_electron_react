@@ -8,11 +8,12 @@ import About from './js/pages/About'
 import Help from './js/pages/Help'
 import Other from './js/pages/Other';
 import Settings from './js/pages/Settings';
-import Layout from './js/components/Layout'
+// import Layout from './js/components/Layout'
+import Layout from './js/components/LayoutRedux'
 import Header from './js/components/Header'
 import Nav from './js/components/Nav'
 
-import store from "./store"
+import store from "./js/store"
 
 // render on page
 ReactDOM.render(

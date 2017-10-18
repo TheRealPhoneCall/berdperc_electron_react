@@ -4,7 +4,7 @@ import { Button, Input, Card, Row, Col, Tabs, Tab } from 'react-materialize'
 
 import { PercAPI, ConfigAPI } from '../../../data/api'
 import PercPad from './PercPad'
-import { PyShell } from '../../../utils'
+import { PyShell } from '../../utils'
 
 const path = require('path')
 

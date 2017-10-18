@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Table, Button } from 'react-materialize';
 
-import { PyShell } from '../../../utils'
+import { PyShell } from '../../utils'
 import { ConfigAPI } from '../../../data/api'
 
 

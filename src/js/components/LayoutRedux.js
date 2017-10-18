@@ -18,12 +18,32 @@ import { fetchTweets } from "../actions/tweetsActions"
   };
 })
 export default class Layout extends React.Component {
-    render() {        
+    componentWillMount() {
+        this.props.dispatch(fetchUser())
+    }
+
+    fetchTweets() {
+        this.props.dispatch(fetchTweets())
+    }
+    render() {       
+        const { user, tweets } = this.props; 
+        if (!tweets.length) {
+            return <button onClick={this.fetchTweets.bind(this)}>load tweets</button>
+        }
+    
+        const mappedTweets = tweets.map(tweet => <li key={tweet.id}>{tweet.text}</li>)
+    
         return (
             <div>
                 <Header />
                 <Nav />
-                <Main />       
+                <div className="row">
+                    <div className="col s9 offset-s3">
+                        <h1>{user.name}</h1>
+                        <ul>{mappedTweets}</ul>
+                        
+                    </div>
+                </div>        
             </div>
         )
     }
