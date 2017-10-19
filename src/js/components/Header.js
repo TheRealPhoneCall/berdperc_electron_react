@@ -6,6 +6,10 @@ import { Collection, Collapsible, CollapsibleItem, CollectionItem } from 'react-
 import Home from '../pages/Home';
 import Other from '../pages/Other';
 
+// Stores
+import { PercStore } from "../stores/PercStore"
+import { SongStore } from "../stores/SongStore"
+
 // Modules
 import { PercAPI, SongsAPI } from '../../data/api'
 
@@ -13,8 +17,17 @@ import { PercAPI, SongsAPI } from '../../data/api'
 export default class Header extends React.Component {
 
     render() {
-        const percussions = PercAPI.all()
-        const genres = SongsAPI.all()
+        // const percs = PercAPI.all()
+        const store = {
+            percs: new PercStore,
+            genres: new SongStore,
+        }
+        store.percs.fetchPercs()
+        const percs = store.percs.percs
+        console.log("Header percs:", percs)
+        // const genres = SongsAPI.all()
+        store.genres.fetchSongs()
+        const genres = store.genres.songs
         const collapsibleItemClass = "sidebard-header collapsible-header waves-effect waves-teal" 
         const collapsibleSubItemClass = "sidebard-header waves-effect waves-teal"    
         const noncollapsibleItemClass = "sidebard-header non-collapsible-header waves-effect waves-teal"       
@@ -37,9 +50,9 @@ export default class Header extends React.Component {
                             <div className="collapsible-body">
                                 <ul>                                    
                                     {
-                                        percussions.map((percussion, i) => {
+                                        percs.map((perc, i) => {
                                             return ( 
-                                                <li key={i}><Link to={`/perc/${percussion.id}/edit`} className={collapsibleSubItemClass}>{percussion.name}</Link></li>                                                 
+                                                <li key={i}><Link to={`/perc/${perc.id}/edit`} className={collapsibleSubItemClass}>{perc.name}</Link></li>                                                 
                                             )
                                         })
                                     }
@@ -63,9 +76,9 @@ export default class Header extends React.Component {
                             <div className="collapsible-body">
                                 <ul>
                                     {
-                                        percussions.map((percussion, i) => {
+                                        percs.map((perc, i) => {
                                             return ( 
-                                                <li key={i}><Link to={`/perc/${percussion.id}/run`} className={collapsibleSubItemClass}>Practice {percussion.name}</Link></li>                                                 
+                                                <li key={i}><Link to={`/perc/${perc.id}/run`} className={collapsibleSubItemClass}>Practice {perc.name}</Link></li>                                                 
                                             )
                                         })
                                     }
@@ -73,7 +86,7 @@ export default class Header extends React.Component {
                             </div>
                         </li>
                         <li className="bold"><Link to="/settings" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Settings</Link></li>
-                        <li className="bold"><Link to="/redux" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Redux</Link></li>
+                        <li className="bold"><Link to="/mobx" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Mobx</Link></li>
                         <li className="bold"><a href="#" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Plugins</a></li>
                     </ul> 
                 </ul>

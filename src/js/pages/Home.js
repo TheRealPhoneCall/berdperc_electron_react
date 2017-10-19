@@ -1,35 +1,24 @@
 import React from 'react'
-import { connect } from "react-redux"
+import { observer } from 'mobx-react'
 import jsonfile from 'jsonfile'
 
 // components
 import Perc from '../components/percussions/Perc';
 
-// actions
-import { fetchPercs } from "../actions/percsActions"
-
 // utils
 import { PercAPI } from '../../data/api'
 import { utils } from '../utils'
 
-@connect((store) => {
-  return {
-    percs: store.percs.percs,
-    perc: store.percs.perc,
-  };
-})
+@observer
 export default class Home extends React.Component {
   constructor() {
     super();
   }
 
-  componentWillMount() {
-    this.props.dispatch(fetchPercs())
-  }
-
   render() {
     console.log("Home Page Rendered!")
-    const percs = this.props.percs
+    const percs = PercAPI.all()
+    console.log("mobx store:", this.props, this.props.store)
     return (
       <div className="col s12">
         {

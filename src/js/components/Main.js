@@ -1,18 +1,18 @@
-import React from 'react';
-import {BrowserRouter, Route, IndexRedirect, Redirect, Switch, Link, NavLink} from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter, Route, IndexRedirect, Redirect, Switch, Link, NavLink } from 'react-router-dom'
+import { observer } from 'mobx-react'
 
 import Home from '../pages/Home'
 import About from '../pages/About'
 import Help from '../pages/Help'
-import Other from '../pages/Other';
-import Settings from '../pages/Settings';
-import Redux from '../pages/Redux';
-import PercRun from '../components/percussions/PercRun';
-import PercEdit from '../components/percussions/PercEdit';
-import Songs from '../pages/Songs';
-import SongRun from '../components/songs/SongRun';
-import SongEdit from '../components/songs/SongEdit';
-
+import Other from '../pages/Other'
+import Settings from '../pages/Settings'
+import Mobx from '../pages/Mobx'
+import PercRun from '../components/percussions/PercRun'
+import PercEdit from '../components/percussions/PercEdit'
+import Songs from '../pages/Songs'
+import SongRun from '../components/songs/SongRun'
+import SongEdit from '../components/songs/SongEdit'
 
 export default class Main extends React.Component {
     constructor(){
@@ -21,6 +21,7 @@ export default class Main extends React.Component {
     }
     
     render() {        
+        console.log("mobx store:", this.props, this.props.store)
         return (            
             <div className="row">
                 <div className="col s9 offset-s3">
@@ -31,7 +32,7 @@ export default class Main extends React.Component {
                         <Route path="/help" component={Help}/>
                         <Route path="/other" component={Other}/>
                         <Route path="/settings" component={Settings}/>
-                        <Route path="/redux" component={Redux}/>
+                        <Route path="/mobx" component={Mobx}/>
                         <Route exact path="/perc/:id/" component={PercRun}/>
                         <Route exact path="/perc/:id/edit" component={PercEdit}/>
                         <Route exact path="/perc/:id/run" component={PercRun}/>
