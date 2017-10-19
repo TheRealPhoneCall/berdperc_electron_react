@@ -1,33 +1,29 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { inject, observer } from 'mobx-react'
 import { Collection, Collapsible, CollapsibleItem, CollectionItem } from 'react-materialize'
 
 // Components
-import Home from '../pages/Home';
-import Other from '../pages/Other';
-
-// Stores
-import { PercStore } from "../stores/PercStore"
-import { SongStore } from "../stores/SongStore"
+import Home from '../pages/Home'
+import Other from '../pages/Other'
 
 // Modules
 import { PercAPI, SongsAPI } from '../../data/api'
 
 // render on page
+@inject("perc_store", "song_store")
+@observer
 export default class Header extends React.Component {
 
+    componentWillMount(){
+        this.props.perc_store.fetchPercs()
+        this.props.song_store.fetchSongs()
+    }
+
     render() {
-        // const percs = PercAPI.all()
-        const store = {
-            percs: new PercStore,
-            genres: new SongStore,
-        }
-        store.percs.fetchPercs()
-        const percs = store.percs.percs
-        console.log("Header percs:", percs)
-        // const genres = SongsAPI.all()
-        store.genres.fetchSongs()
-        const genres = store.genres.songs
+        
+        const percs = this.props.perc_store.percs        
+        const genres = this.props.song_store.songs
         const collapsibleItemClass = "sidebard-header collapsible-header waves-effect waves-teal" 
         const collapsibleSubItemClass = "sidebard-header waves-effect waves-teal"    
         const noncollapsibleItemClass = "sidebard-header non-collapsible-header waves-effect waves-teal"       

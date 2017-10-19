@@ -1,7 +1,8 @@
-import { observable, computed } from "mobx"
+import { observable, action, computed } from "mobx"
 import { PercAPI, SongsAPI } from "../../data/api"
 
 class Song {
+  @observable id 
   @observable value
   @observable id
   @observable complete
@@ -13,7 +14,7 @@ class Song {
   }
 }
 
-export class SongStore {
+class SongStore {
   @observable songs = []
   @observable filtered = []
   @observable id = null
@@ -29,9 +30,10 @@ export class SongStore {
     return song
   }
 
-  fetchSongs() {
+  @action fetchSongs = () => {
     this.songs = SongsAPI.all()
   }
 }
 
-export default new SongStore
+const store = new SongStore
+export default store

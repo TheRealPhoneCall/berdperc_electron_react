@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { observer, inject } from 'mobx-react'
 import { Button, Input, Card, Row, Col, Tabs, Tab } from 'react-materialize'
 
 import { PercAPI, ConfigAPI } from '../../../data/api'
@@ -8,7 +9,8 @@ import { PyShell } from '../../utils'
 
 const path = require('path')
 
-
+@inject('perc_store', 'pad_store', 'config_store')
+@observer
 export default class PercCard extends React.Component {
     constructor(props) {
         super(props)

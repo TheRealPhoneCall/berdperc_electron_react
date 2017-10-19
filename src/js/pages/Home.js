@@ -1,5 +1,5 @@
 import React from 'react'
-import { observer } from 'mobx-react'
+import { inject, observer } from 'mobx-react'
 import jsonfile from 'jsonfile'
 
 // components
@@ -9,15 +9,19 @@ import Perc from '../components/percussions/Perc';
 import { PercAPI } from '../../data/api'
 import { utils } from '../utils'
 
+@inject("perc_store")
 @observer
 export default class Home extends React.Component {
   constructor() {
     super();
   }
-
+  componentWillMount(){
+    this.props.perc_store.fetchPercs()
+  }
   render() {
     console.log("Home Page Rendered!")
-    const percs = PercAPI.all()
+    // this.props.perc_store.fetchPercs()
+    const percs = this.props.perc_store.percs
     console.log("mobx store:", this.props, this.props.store)
     return (
       <div className="col s12">

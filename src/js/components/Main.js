@@ -14,12 +14,7 @@ import Songs from '../pages/Songs'
 import SongRun from '../components/songs/SongRun'
 import SongEdit from '../components/songs/SongEdit'
 
-export default class Main extends React.Component {
-    constructor(){
-        super()
-        console.log(window.location.href)
-    }
-    
+export default class Main extends React.Component {    
     render() {        
         console.log("mobx store:", this.props, this.props.store)
         return (            

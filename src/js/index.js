@@ -14,10 +14,12 @@ import Header from './components/Header'
 import Nav from './components/Nav'
 
 import TodoStore from "./stores/TodoStore"
+import PercStore from "./stores/PercStore"
+import SongStore from "./stores/SongStore"
 
 // render on page
 ReactDOM.render(
-    <Provider >
+    <Provider perc_store={PercStore} song_store={SongStore}  >
         <BrowserRouter>
             <Layout/>
         </BrowserRouter>
