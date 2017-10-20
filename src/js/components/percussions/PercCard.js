@@ -14,57 +14,72 @@ const path = require('path')
 export default class PercCard extends React.Component {
     constructor(props) {
         super(props)
-        const json_file = this.props.json_file
-        const config_map =  ConfigAPI.all(this.props.perc.slug, json_file)
-        this.state = {
-            config_map: config_map,
-            json_file: json_file,
-            map: config_map.maps[0],
-            pad: "pad0",
-            pad_hit: null,
-            pad_hit_class: ""
-        }
+        // this.state = {
+        //     // pad: "pad0",
+        //     // pad_hit: null,
+        //     // pad_hit_class: ""
+        // }
+        // const { perc_store, pad_store, config_store } = this.props
+    }
+
+    componentWillMount(){
+        const { perc, json_file, config_store, pad_store } = this.props
+        // set and get config_content
+        config_store.setConfigContent(perc.slug, json_file)
+        const config_content = config_store.config_content   
+        // set config_pad_map to default map (at index 0)
+        pad_store.setConfigPadMap(config_content.maps, 0)
+        pad_store.initCurrentPad("pad0")
+
+
     }
 
     handlePadClick(event) {
-        console.log(event.target.className)
-        let pad = event.target.className.split(" ")[1]
-        pad = pad.split("-")[1]
-        console.log(pad);
-
-        this.setState({pad})
+        // console.log(event.target.className)
+        let pad_clicked = event.target.className.split(" ")[1]
+        pad_clicked = pad_clicked.split("-")[1]
+        // console.log(pad_clicked);
+        this.props.pad_store.onPadClick(pad_clicked)
     }
 
     handleRunClick(event) {
         console.log("handleRunClick")
-        console.log(event.target)
-        const json_file = `${this.state.config_map.name}.json`
-        console.log(json_file)
+        // console.log(event.target)
+        const { json_file, pad_store } = this.props
+        // console.log(json_file)
+
+        // TODO: set COM5 and Baudrate as form inputs!
         var pyshell = PyShell.start("COM5", "31250", json_file, "text")
         var self = this
         pyshell.on('message', (message) => {
             console.log(message)
             const pad_hit = parseInt(message.slice(-1));
             if (!isNaN(pad_hit)){
-                const pad = "pad" + pad_hit
-                console.log(pad_hit, pad)
-                self.setState({pad_hit, pad, pad_hit_class: "pad-hit"})
-                setTimeout(() => {
-                    this.setState({ pad_hit_class: "" });
-                }, 250);
+                // const pad = "pad" + pad_hit
+                // console.log(pad_hit, pad)
+
+                // self.setState({pad_hit, pad, pad_hit_class: "pad-hit"})
+                // setTimeout(() => {
+                //     this.setState({ pad_hit_class: "" });
+                // }, 250);
+                pad_store.onPadHit(pad_hit)
+                // pad_store.setPadHitClass("pad_hit")
+                // setTimeout(() => {
+                //     pad_store.setPadHitClass("")
+                // }, 250);
             }            
         })
     }
     
     render() {
         console.log("Rendering Percussion Card Component")
-        const perc = this.props.perc
-        const config_map = this.state.config_map        
+        // const perc = this.props.perc
+        const { perc, json_file, config_store, pad_store } = this.props
         const img_src = path.join(__dirname, "../../../assets/images/", perc.image_front) 
-        const map = this.state.map
-        const current_pad = this.state.map[this.state.pad] 
-        const pad_hit = this.state.pad_hit
-        const pad_hit_class = this.state.pad_hit_class  
+        const config_content = config_store.config_content   
+        const map = pad_store.config_pad_map
+        const { pad, pad_hit, notes } = pad_store.current_pad
+        const pad_hit_class = pad_store.pad_hit_class 
         const clickHandler = this.handlePadClick.bind(this)
         
         return (
@@ -72,14 +87,14 @@ export default class PercCard extends React.Component {
                 <Col s={12} className="pad-img">
                     <img src={img_src} className="z-depth-4 responsive-img"/>
                     {
-                        perc.pads.map((pad, i) => {
+                        perc.pads.map((pad_meta, i) => {
                             if (i == pad_hit){
                                 return (
-                                    <div key={i} className={`pads-${perc.slug} ${perc.slug}-${pad.name} ${pad_hit_class}`} onClick={clickHandler}></div>
+                                    <div key={i} className={`pads-${perc.slug} ${perc.slug}-${pad_meta.name} ${pad_hit_class}`} onClick={clickHandler}></div>
                                 )
                             } else {
                                 return (
-                                    <div key={i} className={`pads-${perc.slug} ${perc.slug}-${pad.name}`} onClick={clickHandler}></div>
+                                    <div key={i} className={`pads-${perc.slug} ${perc.slug}-${pad_meta.name}`} onClick={clickHandler}></div>
                                 )
                             }
                                                        
@@ -91,7 +106,7 @@ export default class PercCard extends React.Component {
                     <Row>
                         <Tabs className='tab-demo z-depth-1'>
                             {
-                                current_pad.notes.map((note, i) => {
+                                notes.map((note, i) => {
                                     return (
                                         <Tab key={i} title={note.name} active>
                                             <PercPad key={i} note={note}/>

@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 const path = require('path')
 
 export default class Perc extends React.Component {
-    constructor() {
-        super()
-    }
     render() {
         console.log("Percussion Component Rendered")
         const perc = this.props.perc
@@ -23,7 +20,6 @@ export default class Perc extends React.Component {
                         <p>{perc.html_description}</p>
                     </div>
                     <div className="card-action">
-                        {/* <button id="btn-berdcajon" className="btn waves-effect waves-light">Run</button> */}
                         <Link to={`/perc/${perc.id}/run`} className="btn waves-effect waves-light">Run</Link>
                         <Link to={`/perc/${perc.id}/edit`} className="btn waves-effect waves-light">Edit</Link>
                     </div>

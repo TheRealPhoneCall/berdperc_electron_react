@@ -14,7 +14,7 @@ export default class Songs extends React.Component {
         parseInt(this.props.match.params.id, 10)
     )
 
-    const configs = ConfigAPI.all_configs(genre.genre)
+    const configs = ConfigAPI.configs_by_genre(genre.genre)
     console.log("Configs: ", configs)
 
     return (

@@ -16,10 +16,15 @@ import Nav from './components/Nav'
 import TodoStore from "./stores/TodoStore"
 import PercStore from "./stores/PercStore"
 import SongStore from "./stores/SongStore"
+import ConfigStore from "./stores/ConfigStore"
+import PadStore from "./stores/PadStore"
 
 // render on page
 ReactDOM.render(
-    <Provider perc_store={PercStore} song_store={SongStore}  >
+    <Provider perc_store={PercStore} 
+              song_store={SongStore} 
+              config_store={ConfigStore}
+              pad_store={PadStore}>
         <BrowserRouter>
             <Layout/>
         </BrowserRouter>

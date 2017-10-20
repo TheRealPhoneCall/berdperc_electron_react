@@ -11,6 +11,14 @@ export default class PercPad extends React.Component {
     constructor() {
         super()
     }
+
+    changeHandler_MidiPort(e){
+
+    }
+
+    changeHandler_MidiChannel(e){
+
+    }
     
     render() {
         console.log("Rendering PercPad")
@@ -25,6 +33,7 @@ export default class PercPad extends React.Component {
                 <Input s={6} 
                     type='select' 
                     label="MIDI Port" 
+                    onChange={this.changeHandler_MidiPort.bind(this)}
                     value={`${this.props.note.port}`}>
                         <option value="0" disabled>Select the MIDI port</option>
                         <option value="berdrums 1">berdrums 1</option>
@@ -34,6 +43,7 @@ export default class PercPad extends React.Component {
                 <Input s={6} 
                     type='select' 
                     label="MIDI Channel" 
+                    onChange={this.changeHandler_MidiChannel.bind(this)}
                     value={`${this.props.note.channel}`}>
                         <option value="0" disabled>Select the MIDI channel</option>
                         <option value="1">Channel 0</option>
