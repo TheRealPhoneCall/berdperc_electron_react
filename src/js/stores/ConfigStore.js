@@ -34,6 +34,7 @@ class Map {
 class ConfigStore {
   @observable id = null
   @observable configs = []  
+  @observable configs_by_genre = []
   @observable config = {}
   @observable config_content = {}
 
@@ -41,8 +42,8 @@ class ConfigStore {
     return this.config_content.maps
   }
 
-  fetchConfigsByGenre(perc_slug, genre) {
-    return ConfigAPI.configs_by_genre(perc_slug, genre)
+  @action fetchConfigsByGenre = (perc_slug, genre) => {
+    this.configs_by_genre = ConfigAPI.configs_by_genre(perc_slug, genre)
   }
 
   @computed get getConfig() {
@@ -63,8 +64,8 @@ class ConfigStore {
     this.configs.push(config)
   }
 
-  @action fetchConfigs = () => {
-    this.configs = ConfigAPI.all()
+  @action fetchConfigs = (perc_slug) => {
+    this.configs = ConfigAPI.all_configs(perc_slug)
   }
 
 }

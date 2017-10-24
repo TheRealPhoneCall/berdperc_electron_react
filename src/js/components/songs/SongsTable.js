@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { inject, observer } from 'mobx-react'
 import { Table, Button } from 'react-materialize';
 
 import { PyShell } from '../../utils'
 import { ConfigAPI } from '../../../data/api'
 
-
+@inject('song_store', 'config_store')
+@observer
 export default class SongsTable extends React.Component {
     constructor() {
         super()
@@ -16,9 +18,9 @@ export default class SongsTable extends React.Component {
     }
 
     getJsonFile(id) {
-        for (let i = 0; i < this.props.songs.length; i++) {
+        for (let i = 0; i < this.props.config_store.configs.length; i++) {
             if (i === id){
-                let obj = this.props.songs[i]
+                let obj = this.props.config_store.configs[i]
                 return `${obj.name}.json`
             }
             
@@ -43,15 +45,12 @@ export default class SongsTable extends React.Component {
         const json_file = this.getJsonFile(id)
         console.log(json_file)
         // TODO: Make ID dynamic as well
-        // this.props.history.push(`/songs/0/edit/${json_file}/`)
         this.setState({is_redirect: true})
         this.setState({redirect_to: `/songs/0/edit/${json_file}`})        
     }
 
     render() {
-        console.log("songs: ", this.props.songs)
-        const objects = this.props.songs
-
+        const configs = this.props.config_store.configs_by_genre
         const handleRunClick = this.handleRunClick
         const handleEditClick = this.handleEditClick
         const self = this
@@ -73,19 +72,19 @@ export default class SongsTable extends React.Component {
 
                         <tbody>
                             {
-                                objects.map(function (obj, i){
+                                configs.map(function (config, i){
                                     return ( 
                                         <tr key={i}>
-                                            <td>{obj.name}</td>
-                                            <td>{obj.plugin}</td>
-                                            <td>{obj.plugin_map}</td>
-                                            <td>{obj.used_for}</td>
+                                            <td>{config.name}</td>
+                                            <td>{config.plugin}</td>
+                                            <td>{config.plugin_map}</td>
+                                            <td>{config.used_for}</td>
                                             <td>
-                                                <Button key={`edit-${i}`} json_file={`${obj.name}.json`} 
-                                                        onClick={handleEditClick.bind(self, `${obj.name}.json`, i)}
+                                                <Button key={`edit-${i}`} json_file={`${config.name}.json`} 
+                                                        onClick={handleEditClick.bind(self, `${config.name}.json`, i)}
                                                         floating icon='mode_edit' className='dark_blue'/>  
-                                                <Button key={`run-${i}`} json_file={`${obj.name}.json`} 
-                                                        onClick={handleRunClick.bind(self, `${obj.name}.json`, i)}
+                                                <Button key={`run-${i}`} json_file={`${config.name}.json`} 
+                                                        onClick={handleRunClick.bind(self, `${config.name}.json`, i)}
                                                         floating icon='send' className='dark_blue'/> 
                                             </td>
                                         </tr>                                       

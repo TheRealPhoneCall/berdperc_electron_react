@@ -7,7 +7,7 @@
         "image": "berdcajon_v1.png",
         "image_front": "berdcajon_v1_front.png",
         "logo": "",
-        "default_map": "ad_basic.json",
+        "default_map": "ad_rock.json",
         "pads": [
             {"name": "pad0", "pad_type": "analog"},
             {"name": "pad1", "pad_type": "analog"},

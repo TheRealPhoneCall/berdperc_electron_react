@@ -19,15 +19,19 @@ class SongStore {
   @observable filtered = []
   @observable id = null
   
-  @computed get filterSongs() {
+  @computed get filtered_song() {
     var matchesFilter = new RegExp(this.filtered, "i")
     return this.todos.filter(song => !this.filtered || matchesFilter.test(song.value))
   }
 
-  @computed get getSong() {
+  @computed get current_song() {
     const idx = this.songs.findIndex(song => song.id === this.id)
     const song = this.songs[idx]
     return song
+  }
+
+  @action setID = (id) => {
+    this.id = parseInt(id)
   }
 
   @action fetchSongs = () => {

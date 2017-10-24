@@ -12,15 +12,6 @@ const path = require('path')
 @inject('perc_store', 'pad_store', 'config_store')
 @observer
 export default class PercCard extends React.Component {
-    constructor(props) {
-        super(props)
-        // this.state = {
-        //     // pad: "pad0",
-        //     // pad_hit: null,
-        //     // pad_hit_class: ""
-        // }
-        // const { perc_store, pad_store, config_store } = this.props
-    }
 
     componentWillMount(){
         const { perc, json_file, config_store, pad_store } = this.props
@@ -35,45 +26,27 @@ export default class PercCard extends React.Component {
     }
 
     handlePadClick(event) {
-        // console.log(event.target.className)
         let pad_clicked = event.target.className.split(" ")[1]
         pad_clicked = pad_clicked.split("-")[1]
-        // console.log(pad_clicked);
         this.props.pad_store.onPadClick(pad_clicked)
     }
 
     handleRunClick(event) {
         console.log("handleRunClick")
-        // console.log(event.target)
         const { json_file, pad_store } = this.props
-        // console.log(json_file)
-
-        // TODO: set COM5 and Baudrate as form inputs!
         var pyshell = PyShell.start("COM5", "31250", json_file, "text")
         var self = this
         pyshell.on('message', (message) => {
             console.log(message)
             const pad_hit = parseInt(message.slice(-1));
             if (!isNaN(pad_hit)){
-                // const pad = "pad" + pad_hit
-                // console.log(pad_hit, pad)
-
-                // self.setState({pad_hit, pad, pad_hit_class: "pad-hit"})
-                // setTimeout(() => {
-                //     this.setState({ pad_hit_class: "" });
-                // }, 250);
                 pad_store.onPadHit(pad_hit)
-                // pad_store.setPadHitClass("pad_hit")
-                // setTimeout(() => {
-                //     pad_store.setPadHitClass("")
-                // }, 250);
             }            
         })
     }
     
     render() {
         console.log("Rendering Percussion Card Component")
-        // const perc = this.props.perc
         const { perc, json_file, config_store, pad_store } = this.props
         const img_src = path.join(__dirname, "../../../assets/images/", perc.image_front) 
         const config_content = config_store.config_content   
