@@ -4,7 +4,7 @@ import { PercAPI } from "../../data/api"
 class Perc {
   @observable id
   @observable name
-  @observable html_description
+  @observable description
   @observable image
   @observable image_front
   @observable logo
@@ -14,7 +14,7 @@ class Perc {
   constructor(obj){
     this.id = obj.id
     this.name = obj.name
-    this.html_description = obj.html_description
+    this.description = obj.description
     this.image = obj.image
     this.image_front = obj.image_front
     this.logo = obj.logo

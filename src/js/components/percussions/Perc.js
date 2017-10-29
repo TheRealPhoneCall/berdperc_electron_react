@@ -17,7 +17,7 @@ export default class Perc extends React.Component {
                         <span className="card-title">{perc.name}</span>
                     </div>
                     <div className="card-content">
-                        <p>{perc.html_description}</p>
+                        <p>{perc.description}</p>
                     </div>
                     <div className="card-action">
                         <Link to={`/perc/${perc.id}/run`} className="btn waves-effect waves-light">Run</Link>

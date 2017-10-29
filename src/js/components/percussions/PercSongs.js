@@ -20,7 +20,7 @@ export default class PercSongs extends React.Component {
                         <span className="card-title">{this.props.perc.name}</span>
                     </div>
                     <div className="card-content">
-                        {this.props.perc.html_description}
+                        {this.props.perc.description}
                     </div>
                     <div className="card-action">
                         {/* <button id="btn-berdcajon" className="btn waves-effect waves-light">Run</button> */}

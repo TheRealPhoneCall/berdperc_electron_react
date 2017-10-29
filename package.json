@@ -4,7 +4,9 @@
   "description": "The desktop app support for configuring/playing with berdperc instruments",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "concurrently \"npm run server\" \"npm run electron\"",
+    "electron": "electron .",
+    "server": "pouchdb-server --host 0.0.0.0 -p 10102 -m -d /tmp/pouchdb-server/ -n true",
     "test": "mocha -R spec",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
     "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"berdperc\"",
@@ -27,11 +29,14 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "concurrently": "^3.5.0",
     "css-loader": "^0.28.7",
     "electron": "~1.6.2",
     "electron-packager": "^9.1.0",
@@ -51,12 +56,18 @@
     "react-redux": "^4.4.5",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
-    "redux-promise-middleware": "^4.4.1",
-    "redux-thunk": "^2.2.0",
+    "rxdb": "^6.0.1",
+    "rxjs": "^5.5.0",
     "should": "^6.0.0",
     "webpack": "^3.8.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "electron-tabs": "^0.8.0",
+    "electron-window-manager": "^1.0.4",
+    "melanke-watchjs": "^1.3.1",
+    "pouchdb-adapter-http": "^6.3.4",
+    "pouchdb-adapter-websql": "^6.3.4",
+    "pouchdb-replication": "^6.3.4",
+    "pouchdb-server": "^2.3.7"
+  }
 }

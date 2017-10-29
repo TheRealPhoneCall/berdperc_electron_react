@@ -9,7 +9,6 @@ import Help from './pages/Help'
 import Other from './pages/Other'
 import Settings from './pages/Settings'
 import Layout from './components/Layout'
-// import Layout from './components/LayoutRedux'
 import Header from './components/Header'
 import Nav from './components/Nav'
 
@@ -18,6 +17,15 @@ import PercStore from "./stores/PercStore"
 import SongStore from "./stores/SongStore"
 import ConfigStore from "./stores/ConfigStore"
 import PadStore from "./stores/PadStore"
+
+// initialize db
+import BerdPercDB from '../data/rxdb_service'
+const berdperc_db = new BerdPercDB('berdpercdb', 'websql')
+const berdperc_db_create = berdperc_db.createDB()
+const berdperc_db_get = berdperc_db.getDB()
+// const berdperc_db_add = berdperc_db.addPerc()
+console.log("db state at index.js:", berdperc_db, 
+            berdperc_db_create, berdperc_db_get)
 
 // render on page
 ReactDOM.render(
