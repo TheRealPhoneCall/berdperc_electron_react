@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { observer, inject } from 'mobx-react'
 import { Button, Input, Card, Row, Col, Tabs, Tab } from 'react-materialize'
 
-import { PercAPI, ConfigAPI } from '../../../data/api'
+import { PercAPI, ConfigAPI } from '../../../data/json_service'
 import PercPad from './PercPad'
 import { PyShell } from '../../utils'
 

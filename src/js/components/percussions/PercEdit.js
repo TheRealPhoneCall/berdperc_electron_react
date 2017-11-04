@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { inject, observer } from 'mobx-react'
 
-import { PercAPI } from '../../../data/api'
+import { PercAPI } from '../../../data/json_service'
 
 import PercCard from './PercCard'
 import PercSounds from './PercSounds'

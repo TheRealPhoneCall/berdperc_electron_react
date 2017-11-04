@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react'
 
 import SongsTable from '../components/songs/SongsTable'
 
-import { ConfigAPI, SongsAPI } from '../../data/api'
+import { ConfigAPI, SongsAPI } from '../../data/json_service'
 
 @inject('song_store', 'config_store')
 @observer

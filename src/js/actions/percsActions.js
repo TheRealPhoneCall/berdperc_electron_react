@@ -1,5 +1,5 @@
 import axios from "axios";
-import { PercAPI } from "../../data/api"
+import { PercAPI } from "../../data/json_service"
 
 export function fetchPercs() {
   return function(dispatch) {

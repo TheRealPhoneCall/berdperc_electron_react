@@ -1,5 +1,5 @@
 import { observable, action, computed } from "mobx"
-import { ConfigAPI } from "../../data/api"
+import { ConfigAPI } from "../../data/json_service"
 
 class Config {
   @observable id

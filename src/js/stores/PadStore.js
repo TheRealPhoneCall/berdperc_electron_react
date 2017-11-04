@@ -1,5 +1,5 @@
 import { observable, action, computed } from "mobx"
-import { PadAPI } from "../../data/api"
+import { PadAPI } from "../../data/json_service"
 
 class Pad {
   @observable id

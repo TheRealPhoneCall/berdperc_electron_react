@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Collapsible, CollapsibleItem, Collection, CollectionItem } from 'react-materialize'
 
-import { MidiMapAPI } from '../../../data/api'
+import { MidiMapAPI } from '../../../data/json_service'
 
 const path = require('path')
 

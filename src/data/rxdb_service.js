@@ -1,6 +1,9 @@
 import RxDB from 'rxdb'
 import 'babel-polyfill'
 import db_password from '../../.keys/passwords'
+import jsonfile from 'jsonfile'
+import fs from 'fs'
+import path from 'path'
 
 // import db schemas:
 import { percussionSchema } from "./rxdb_schema"
@@ -62,6 +65,13 @@ export default class BerdPercDB {
 
     getDB(){
         return this.database
+    }
+
+    getPercsJson(){
+        const filePath = path.join(__dirname, "./percussions.json")
+        const object = jsonfile.readFileSync(filePath)        
+        console.log(object)
+        return object;
     }
 
     addPerc(){

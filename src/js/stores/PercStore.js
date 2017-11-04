@@ -1,5 +1,5 @@
 import { observable, action, computed } from "mobx"
-import { PercAPI } from "../../data/api"
+import { PercAPI } from "../../data/json_service"
 
 class Perc {
   @observable id

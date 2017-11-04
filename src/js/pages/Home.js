@@ -6,7 +6,7 @@ import jsonfile from 'jsonfile'
 import Perc from '../components/percussions/Perc';
 
 // utils
-import { PercAPI } from '../../data/api'
+import { PercAPI } from '../../data/json_service'
 import { utils } from '../utils'
 
 @inject("perc_store")

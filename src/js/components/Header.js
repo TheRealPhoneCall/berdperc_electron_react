@@ -8,7 +8,7 @@ import Home from '../pages/Home'
 import Other from '../pages/Other'
 
 // Modules
-import { PercAPI, SongsAPI } from '../../data/api'
+import { PercAPI, SongsAPI } from '../../data/json_service'
 
 // render on page
 @inject("perc_store", "song_store")

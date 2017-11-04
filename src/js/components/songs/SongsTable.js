@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react'
 import { Table, Button } from 'react-materialize';
 
 import { PyShell } from '../../utils'
-import { ConfigAPI } from '../../../data/api'
+import { ConfigAPI } from '../../../data/json_service'
 
 @inject('song_store', 'config_store')
 @observer

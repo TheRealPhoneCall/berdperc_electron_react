@@ -4,7 +4,7 @@ import path from 'path'
 
 const PercAPI = {
     percussions: function() {        
-        const filePath = path.join(__dirname, "./percussions.json")
+        const filePath = path.join(__dirname, "./json/percussions.json")
         const object = jsonfile.readFileSync(filePath)        
         console.log(object)
         return object;
@@ -26,7 +26,7 @@ const PercAPI = {
 
 const MidiMapAPI = {
     midi_map: function(file) {
-        const filePath = path.join(__dirname, `./${file}`)
+        const filePath = path.join(__dirname, `./json/${file}`)
         const object = jsonfile.readFileSync(filePath)
         console.log(object)
         return object;
@@ -81,7 +81,7 @@ const ConfigAPI = {
 
 const SongsAPI = {
     music_lib: function() {
-        const filePath = path.join(__dirname, `./music_library.json`)
+        const filePath = path.join(__dirname, `./json/music_library.json`)
         const object = jsonfile.readFileSync(filePath)
         
         console.log(object.genres)

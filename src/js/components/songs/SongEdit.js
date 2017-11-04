@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { PercAPI } from '../../../data/api'
+import { PercAPI } from '../../../data/json_service'
 
 import PercCard from '../percussions/PercCard'
 import PercSounds from '../percussions/PercSounds'
