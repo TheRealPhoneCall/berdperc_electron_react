@@ -3,18 +3,18 @@ import fs from 'fs'
 import path from 'path'
 
 const PercAPI = {
-    percussions: function() {        
+    percs: function() {        
         const filePath = path.join(__dirname, "./json/percussions.json")
         const object = jsonfile.readFileSync(filePath)        
         console.log(object)
         return object;
     },
     all: function() { 
-        return this.percussions()
+        return this.percs()
     },
     get: function(id) {
         const isPerc = p => p.id === id
-        return this.percussions().find(isPerc)
+        return this.percs().find(isPerc)
     }, 
     set: function(){
 
