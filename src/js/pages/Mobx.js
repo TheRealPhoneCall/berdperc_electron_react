@@ -1,7 +1,6 @@
 import React from 'react';
-import { connect } from "react-redux"
 
-export default class Redux extends React.Component {
+export default class MobX extends React.Component {
     componentWillMount() {
         this.props.dispatch(fetchUser())
     }
@@ -11,11 +10,11 @@ export default class Redux extends React.Component {
     }
     render() {
         const { user, tweets } = this.props; 
-        console.log("Redux Page Rendered!")
+        console.log("MobX Page Rendered!")
         if (!tweets.length) { 
             return (
                 <div>
-                    <h1>Redux Page</h1>                                        
+                    <h1>MobX Page</h1>                                        
                     <button onClick={this.fetchTweets.bind(this)} className="btn waves-effect waves-light">load tweets</button>
                 </div>                
             )
