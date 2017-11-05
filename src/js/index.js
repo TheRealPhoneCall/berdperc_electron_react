@@ -22,10 +22,8 @@ import PadStore from "./stores/PadStore"
 import BerdPercDB from '../data/rxdb_service'
 const berdperc_db = new BerdPercDB('berdpercdb', 'websql')
 const berdperc_db_create = berdperc_db.createDB()
-const berdperc_db_get = berdperc_db.getDB()
-// const berdperc_db_add = berdperc_db.addPerc()
 console.log("db state at index.js:", berdperc_db, 
-            berdperc_db_create, berdperc_db_get)
+            berdperc_db_create)
 
 // render on page
 ReactDOM.render(

@@ -23,7 +23,9 @@ export default class BerdPercDB {
         this.db = null
         this.collection = null
 
-        this.perc_collection = null
+        // collection objects
+        this.perc_col_obj = null
+        this.perc_col_rxdb = null
 
         // default db data:
         this.default_percs = null
@@ -32,13 +34,17 @@ export default class BerdPercDB {
     async createDB(){
         // create if not yet created
         try{
+            console.log("Creating DB...")
             this.db = await RxDB.create({
                 name: this.db_name,
                 adapter: this.apadter,
                 password: db_password
             })
+            
+            console.log(this.db)
+            // initiate PercCollection
+            await this.initPercCollection()    
 
-            this.perc_collection = await this.getOrCreatePerc()
         } catch (err) {
             console.log("error in db/percussion creation:", err)
         }
@@ -51,17 +57,13 @@ export default class BerdPercDB {
         return this.db
     }
 
-    async getOrCreatePerc(){
+    async initPercCollection(){
         console.log('creating percussions collection..')
-        let perc_col = await new PercCollection(this.db, 'percussions', 
-                                          'perc', percussionSchema)
-        perc_col = await perc_col.getCol()
-        console.log("collection created from db class:", perc_col)                
-        // console.log('add default percs')
-        // this.default_percs = perc_col.getDefaultPercsJSON()
-        // perc_col.addDefaultPercs()
-        // perc_col.syncCol()
-        return perc_col
+        this.perc_col_obj = new PercCollection(this.db, 'percussions', 
+                                              'perc', percussionSchema)
+        this.perc_col_rxdb = await this.perc_col_obj.initAndGetCol()  
+        console.log("Percussions obj & rxdb:", this.perc_col_obj, 
+                    this.perc_col_rxdb)                                    
     }
 
 
@@ -75,13 +77,11 @@ export class RxDBCollection{
         this.col_schema = col_schema
         this.col_api = col_api
         this.collection = null
-        this.default_docs = null
-        this.initAndGetCol()
-      
+        this.default_docs = null      
     }
 
     async initAndGetCol(){
-        console.log("RxDBCollection for " + this.col_name)
+        console.log("Initialize RxDBCollection for " + this.col_name)
         try{
             this.collection = await this.db.collection({
                 name: this.col_name,
@@ -94,16 +94,21 @@ export class RxDBCollection{
         } catch(err){
             console.log(`error in ${this.col_name} collection creation: ${err}`)
         }
-        console.log(this.collection)
         return this.collection
     }
 
     async getCol(){
-        if (this.collection) {
-            console.log("RxDBCollection:", this.collection)
-        } else {
+        console.log("RxDBCollection.getCol()")
+        try{
+            this.collection = this.db.collections[this.name]
+            if (!this.collection){ // if null
+                this.collection = await this.initAndGetCol()
+            }
+        } catch (err){
+            console.log("Error retrieving collection object:", err)
             this.collection = await this.initAndGetCol()
-            console.log("RxDBCollection:", this.collection)
+            console.log("Collection has been newly created:", 
+                        this.collection)
         }
         
         return this.collection
@@ -121,6 +126,7 @@ export class RxDBCollection{
         console.log('inserting doc:');
         console.dir(doc);
         const inserted_doc = await this.collection.insert(doc);
+        console.log("inserted doc:", inserted_doc)
         return inserted_doc
     }
 
@@ -130,10 +136,19 @@ export class RxDBCollection{
         return this.default_docs
     }
 
-    addDefaultDocs(){
+    async addDefaultDocs(){
         for (let doc of this.default_docs) {
-            console.log(doc)
-            this.collection.insert(doc)
+            try{
+                let insert_promise = await this.collection.insert(doc)
+                console.log("Adding document:", insert_promise, doc)
+            } catch (err){
+                if (err.status == 409){
+                    // document is already added
+                    console.log("Error 409 - document already added.", err)
+                } else {
+                    console.log("Error in adding default doc", err)
+                }
+            }
         }
     }
 }
@@ -141,14 +156,24 @@ export class RxDBCollection{
 export class PercCollection extends RxDBCollection{
     constructor(db, col_name, col_slug, col_schema){
         super(db, col_name, col_slug, col_schema, PercAPI)
-        this.collection = null 
+        this.db = db
+        this.perc_col_rxdb = null 
         this.default_percs = null
     }
 
+    async initAndGetCol(){
+        this.perc_col_rxdb = await super.initAndGetCol()
+        console.log("PercCollection.initAndGetCol:", this.perc_col_rxdb, 
+                    this.db.collections.percussions)
+        return this.perc_col_rxdb
+    }
+
     async getCol(){
-        this.collection = await super.getCol()
-        console.log("PercCollection", this.collection)
-        return this.collection
+        // this.perc_col_rxdb = this.db.collections.percussions
+        // console.log("PercCollection.getCol:", this.perc_col_rxdb)
+        this.perc_col_rxdb = this.db.collections.percussions
+        console.log("PercCollection.getCol:", this.perc_col_rxdb)
+        return this.perc_col_rxdb
     }
 
     syncCol(){
