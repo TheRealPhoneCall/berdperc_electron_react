@@ -1,4 +1,4 @@
-export const percussionSchema = {
+export const percSchema = {
     title: 'percussion schema',
     description: 'percussion data',
     version: 0,
@@ -52,4 +52,52 @@ export const percussionSchema = {
     },
     required: ['slug', 'image', 'image_front', 'default_map']
 };
+
+export const songSchema = {
+    title: 'song schema',
+    description: 'song data',
+    version: 0,
+    type: 'object',
+    properties: {
+        id: {
+            type: 'integer',
+        },
+        genre: {
+            type: 'string',
+            primary: true
+        }
+    },
+    required: ["id"]
+};
+
+export const configSchema = {
+    title: 'config schema',
+    description: 'config data',
+    version: 0,
+    type: 'object',
+    properties: {
+        id: {
+            type: 'integer',
+        },
+        name: {
+            type: 'integer',
+            primary: true
+        },
+        plugin_map: {
+            type: 'string',
+        },
+        description: {
+            type: 'string',
+        },
+        used_for: {
+            type: 'string',
+        },
+        genre: {
+            type: 'string',
+        }
+    },
+    required: ["id"]
+};
+
+
 

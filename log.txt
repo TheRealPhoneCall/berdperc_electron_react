@@ -2,3 +2,13 @@
 [Sun, 05 Nov 2017 08:50:25 GMT] [info] [<0.000.0>] database is in-memory; no changes will be saved.
 [Sun, 05 Nov 2017 08:50:25 GMT] [info] [<0.000.0>] database files will be saved to /tmp/pouchdb-server/
 [Sun, 05 Nov 2017 08:50:25 GMT] [info] [<0.000.0>] navigate to http://0.0.0.0:10102/_utils for the Fauxton UI.
+[Sun, 05 Nov 2017 14:06:21 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 200
+[Sun, 05 Nov 2017 14:08:45 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /berdperc_ddb 404
+[Sun, 05 Nov 2017 14:08:51 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /berdperc_db 404
+[Sun, 05 Nov 2017 14:10:29 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /berdpercdb 404
+[Sun, 05 Nov 2017 14:10:36 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /berdpercdb 404
+[Sun, 05 Nov 2017 14:11:50 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /berdpercddb 404
+[Sun, 05 Nov 2017 14:12:29 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /berdpercddb 404
+[Sun, 05 Nov 2017 14:12:31 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /berdpercddb 404
+[Sun, 05 Nov 2017 14:12:33 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /berdpercddb 404
+[Sun, 05 Nov 2017 14:23:51 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /berdpercdb 404

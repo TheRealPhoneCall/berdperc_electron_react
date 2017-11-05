@@ -79,6 +79,42 @@ const ConfigAPI = {
     }
 }
 
+const ConfigFileAPI = {
+    configs: function(perc_slug, genre){
+        var configs = []
+        const padMapPath = path.join(__dirname, `../../settings/pad_maps/${perc_slug}`) 
+        const dir = fs.readdirSync(padMapPath)
+        // loop through file system
+        for(let filePath of dir) {                
+            const jsonFilePath = `${padMapPath}/${filePath}`
+            const object = jsonfile.readFileSync(jsonFilePath)
+            if (genre){
+                console.log(object, genre)
+                if (object.genre == genre) {
+                    configs.push(object)   
+                }  
+            } else {
+                configs.push(object)
+            }
+                                       
+        }
+        
+        console.log(configs)
+        return configs
+    },
+    configs_by_genre: function(perc_slug, genre){
+        return this.configs(perc_slug, genre)
+    },
+    all: function(){
+        return this.configs("berdcajon_v1")
+    },
+    get_config_content: function(perc_slug, file) {
+        const filePath = path.join(__dirname, `../../settings/pad_maps/${perc_slug}/${file}`)
+        const object = jsonfile.readFileSync(filePath)
+        return object;
+    }
+}
+
 const SongsAPI = {
     music_lib: function() {
         const filePath = path.join(__dirname, `./json/music_library.json`)
@@ -100,4 +136,4 @@ const SongsAPI = {
 }
   
 
-export { PercAPI, MidiMapAPI, ConfigAPI, SongsAPI }
+export { PercAPI, MidiMapAPI, ConfigAPI, ConfigFileAPI, SongsAPI }
