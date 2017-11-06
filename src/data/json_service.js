@@ -43,6 +43,25 @@ const MidiMapAPI = {
     }
 }
 
+const MidiListAPI = {
+    midi_map: function(file) {
+        const filePath = path.join(__dirname, `./json/${file}`)
+        const object = jsonfile.readFileSync(filePath)
+        console.log(object)
+        return object;
+    },
+    all: function(file) { 
+        return this.midi_map("gm_admap.json")
+    },
+    get: function(id) {
+        const isMap = p => p.id === id
+        return this.midi_map().find(isMap)
+    },
+    save: function(){
+        
+    }
+}
+
 const ConfigAPI = {
     configs: function(perc_slug, genre){
         var configs = []
@@ -83,6 +102,7 @@ const ConfigFileAPI = {
     configs: function(perc_slug, genre){
         var configs = []
         const padMapPath = path.join(__dirname, `../../settings/pad_maps/${perc_slug}`) 
+        console.log("padMapPath:", padMapPath)
         const dir = fs.readdirSync(padMapPath)
         // loop through file system
         for(let filePath of dir) {                
@@ -106,7 +126,8 @@ const ConfigFileAPI = {
         return this.configs(perc_slug, genre)
     },
     all: function(){
-        return this.configs("berdcajon_v1")
+        const perc_slug = "berdcajon_v1" 
+        return this.configs(perc_slug)
     },
     get_config_content: function(perc_slug, file) {
         const filePath = path.join(__dirname, `../../settings/pad_maps/${perc_slug}/${file}`)
@@ -136,4 +157,5 @@ const SongsAPI = {
 }
   
 
-export { PercAPI, MidiMapAPI, ConfigAPI, ConfigFileAPI, SongsAPI }
+export { PercAPI, MidiMapAPI, ConfigAPI, 
+         ConfigFileAPI, MidiListAPI, SongsAPI }

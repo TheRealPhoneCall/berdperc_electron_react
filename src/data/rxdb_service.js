@@ -7,7 +7,8 @@ RxDB.plugin(require('pouchdb-adapter-websql'));
 RxDB.plugin(require('pouchdb-adapter-http'));
 
 // import collections:
-import { PercCollection, SongCollection } from "./rxdb_collections"
+import { PercCollection, SongCollection,
+         MapListCollection, ConfigCollection } from "./rxdb_collections"
 
 export default class BerdPercDB { 
     constructor(db_name, adapter){
@@ -21,6 +22,10 @@ export default class BerdPercDB {
         this.perc_col_rxdb = null
         this.song_col_obj = null
         this.song_col_rxdb = null
+        this.map_list_col_obj = null
+        this.map_list_col_rxdb = null
+        this.config_col_obj = null
+        this.config_col_rxdb = null
     }
 
     async createDB(){
@@ -35,8 +40,12 @@ export default class BerdPercDB {
             
             console.log(this.db)
             // initiate collections
-            await this.initPercCollection()    
-            await this.initSongCollection()
+            await Promise.all([
+                this.initPercCollection(),
+                this.initSongCollection(),
+                this.initMapListCollection(),
+                this.initConfigCollection(),
+            ]);
 
         } catch (err) {
             console.log("error in db/percussion creation:", err)
@@ -66,15 +75,21 @@ export default class BerdPercDB {
                     this.song_col_rxdb)                                    
     }
 
-    // use this for this error:
-    // collection(<name>): another instance created this collection 
-    // with a different schema
-    async deleteSongCollection(){
-        console.log(this.db.collections)
-        const songs_col = await this.db.collections["songs"]
-        await songs_col.remove()
+    async initMapListCollection(){
+        console.log('Creating map_lists collection..')
+        this.map_list_col_obj = new MapListCollection(this.db)
+        this.map_list_col_rxdb = await this.map_list_col_obj.initAndGetCol()  
+        console.log("MapLists obj & rxdb:", this.map_list_col_obj, 
+                    this.map_list_col_rxdb)                                    
     }
 
+    async initConfigCollection(){
+        console.log('Creating configs collection..')
+        this.config_col_obj = new ConfigCollection(this.db)
+        this.config_col_rxdb = await this.config_col_obj.initAndGetCol()  
+        console.log("Configs obj & rxdb:", this.config_col_obj, 
+                    this.config_col_rxdb)                                    
+    }
 
 }
 

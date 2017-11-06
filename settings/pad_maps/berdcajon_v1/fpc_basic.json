@@ -3,7 +3,6 @@
     "name": "fpc_basic",
     "plugin": "FPC",
     "plugin_map": "FPC",
-    "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
     "used_for": "Electronic drum tracks",
     "genre": "Modern",
     "description": "",

@@ -3,8 +3,10 @@ import 'babel-polyfill'
 import db_password from '../../.keys/passwords'
 
 // import db/json schemas/services:
-import { percSchema, songSchema, configSchema } from "./rxdb_schema"
-import { PercAPI, SongsAPI, ConfigFileAPI } from "./json_service"
+import { percSchema, songSchema, 
+         mapListSchema, configSchema } from "./rxdb_schema"
+import { PercAPI, SongsAPI, 
+         MidiListAPI, ConfigFileAPI } from "./json_service"
 
 console.log('hostname: ' + window.location.hostname);
 const syncURL = 'http://' + window.location.hostname + ':10102/';
@@ -148,12 +150,41 @@ export class SongCollection extends RxDBCollection{
     
 }
 
+export class MapListCollection extends RxDBCollection{
+    constructor(db){
+        const col_name = 'maplists1'
+        const col_slug = 'maplist1'
+        const col_schema = mapListSchema
+
+        super(db, col_name, col_slug, col_schema, MidiListAPI)
+        this.db = db
+        this.col_rxdb = null 
+    }
+
+    async initAndGetCol(){
+        this.col_rxdb = await super.initAndGetCol()
+        console.log("MapListCollection.initAndGetCol:", this.col_rxdb)
+        return this.col_rxdb
+    }
+
+    getCol(){
+        return this.col_rxdb
+    }
+
+    syncCol(){
+        // sync
+        super.syncCol()
+    }
+    
+}
+
 export class ConfigCollection extends RxDBCollection{
     constructor(db){
-        const col_name = 'configs'
-        const col_slug = 'config'
-        const col_schema = configSchema
+        const col_name = 'configs2'
+        const col_slug = 'config2'
+        const col_schema = configSchema()
 
+        // assume perc_slug = "berdperc_v1" for now
         super(db, col_name, col_slug, col_schema, ConfigFileAPI)
         this.db = db
         this.col_rxdb = null 

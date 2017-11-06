@@ -10,6 +10,15 @@
             "runtimeArgs": [],
             "cwd": "${workspaceRoot}/",
             "protocol": "legacy"
+        },
+        {
+            "name": "Debug Main Process",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}/",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/electron/dist/electron.exe",
+            "program": "${workspaceRoot}/main.js",
+            "protocol": "legacy"
         }
     ]
 }

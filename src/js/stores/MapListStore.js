@@ -1,28 +1,18 @@
 import { observable, action, computed } from "mobx"
-import { PadAPI } from "../../data/json_service"
+import { MapAPI } from "../../data/json_service"
 
-class Pad {
-  @observable id
+class MapList {
   @observable name
-  @observable pad_type
+  @observable maps
 
   constructor(obj){
-    this.id = obj.id
     this.name = obj.name
-    this.pad_type = obj.pad_type
+    this.maps = obj.maps
   }
 }
 
-class PadStore {
-  @observable pads_metas = []
-  @observable pad_meta_id = null
-  @observable config_pad_map = {}
-  @observable current_pad = {
-    pad: "pad0",
-    pad_hit: null,
-    notes: []
-  }
-  @observable pad_hit_class = ""
+class MapListStore {
+  @observable maps = []
 
   @computed get pad_meta() {
     const idx = this.pads_metas.findIndex(pad => pad.id === this.pad_meta_id)

@@ -6,7 +6,6 @@
     "description": "",
     "used_for": "Generic Digital Pads Controller",
     "genre": "Modern",
-    "map_table": "http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_note_numbers_for_octaves.htm",
     "maps": [
         {
             "pad0": {
