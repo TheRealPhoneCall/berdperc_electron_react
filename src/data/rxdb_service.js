@@ -44,14 +44,14 @@ export default class BerdPercDB {
                 this.initPercCollection(),
                 this.initSongCollection(),
                 this.initMapListCollection(),
-                this.initConfigCollection(),
+                this.initConfigCollection()
             ]);
 
         } catch (err) {
             console.log("error in db/percussion creation:", err)
         }
 
-        console.log("db and collection created:", this.db, this.perc_collection)
+        console.log("db and collection created:", this.db)
         return this.db
     }
 
@@ -65,6 +65,10 @@ export default class BerdPercDB {
         this.perc_col_rxdb = await this.perc_col_obj.initAndGetCol()  
         console.log("Percussions obj & rxdb:", this.perc_col_obj, 
                     this.perc_col_rxdb)                                    
+        return {
+            col_obj: this.perc_col_obj,
+            col_rxdb: this.perc_col_rxdb
+        } 
     }
 
     async initSongCollection(){
@@ -72,7 +76,11 @@ export default class BerdPercDB {
         this.song_col_obj = new SongCollection(this.db)
         this.song_col_rxdb = await this.song_col_obj.initAndGetCol()  
         console.log("Songs obj & rxdb:", this.song_col_obj, 
-                    this.song_col_rxdb)                                    
+                    this.song_col_rxdb)          
+        return {
+            col_obj: this.song_col_obj,
+            col_rxdb: this.song_col_rxdb
+        }                           
     }
 
     async initMapListCollection(){
@@ -80,7 +88,11 @@ export default class BerdPercDB {
         this.map_list_col_obj = new MapListCollection(this.db)
         this.map_list_col_rxdb = await this.map_list_col_obj.initAndGetCol()  
         console.log("MapLists obj & rxdb:", this.map_list_col_obj, 
-                    this.map_list_col_rxdb)                                    
+                    this.map_list_col_rxdb) 
+        return {
+            col_obj: this.map_list_col_obj,
+            col_rxdb: this.map_list_col_rxdb
+        }                                  
     }
 
     async initConfigCollection(){
@@ -88,7 +100,11 @@ export default class BerdPercDB {
         this.config_col_obj = new ConfigCollection(this.db)
         this.config_col_rxdb = await this.config_col_obj.initAndGetCol()  
         console.log("Configs obj & rxdb:", this.config_col_obj, 
-                    this.config_col_rxdb)                                    
+                    this.config_col_rxdb)   
+        return {
+            col_obj: this.config_col_obj,
+            col_rxdb: this.config_col_rxdb
+        }                                 
     }
 
 }

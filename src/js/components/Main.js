@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter, Route, IndexRedirect, Redirect, Switch, Link, NavLink } from 'react-router-dom'
-import { observer } from 'mobx-react'
 
 import Home from '../pages/Home'
 import About from '../pages/About'
@@ -15,8 +14,9 @@ import SongRun from '../components/songs/SongRun'
 import SongEdit from '../components/songs/SongEdit'
 
 export default class Main extends React.Component {    
+    
     render() {        
-        console.log("mobx store:", this.props, this.props.store)
+        console.log("mobx store:", this.props)
         return (            
             <div className="row">
                 <div className="col s9 offset-s3">
@@ -35,7 +35,6 @@ export default class Main extends React.Component {
                         <Route exact path="/songs/:id/edit/:json_file" component={SongEdit}/>
                         <Route exact path="/songs/:id/run/:json_file" component={SongRun}/>
                     </Switch>
-                    
                 </div>
             </div>          
         )

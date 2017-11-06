@@ -83,6 +83,16 @@ class PadStore {
     this.pads_metas.push(pad)
   }
 
+  // // rxdb:
+  // @observable col_obj = null
+  // @observable col_rxdb = null
+  // @observable db = null
+
+  // @action setCollection = (db_obj) => {
+  //   this.col_obj = db_obj.config_col_obj
+  //   this.col_rxdb = db_obj.config_col_rxdb
+  //   this.db = db_obj.db
+  // }
   
 
 }

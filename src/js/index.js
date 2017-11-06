@@ -14,21 +14,16 @@ import Nav from './components/Nav'
 
 import PercStore from "./stores/PercStore"
 import SongStore from "./stores/SongStore"
+import MapListStore from "./stores/MapListStore"
 import ConfigStore from "./stores/ConfigStore"
 import PadStore from "./stores/PadStore"
-
-// initialize db
-import BerdPercDB from '../data/rxdb_service'
-const berdperc_db = new BerdPercDB('berdpercdb', 'websql')
-const berdperc_db_create = berdperc_db.createDB()
-console.log("db state at index.js:", berdperc_db, 
-            berdperc_db_create)
 
 // render on page
 ReactDOM.render(
     <Provider perc_store={PercStore} 
               song_store={SongStore} 
               config_store={ConfigStore}
+              map_list_store={MapListStore}
               pad_store={PadStore}>
         <BrowserRouter>
             <Layout/>

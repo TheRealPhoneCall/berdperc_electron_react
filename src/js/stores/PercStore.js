@@ -42,8 +42,26 @@ class PercStore {
     this.percs.push(perc)
   }
 
-  @action fetchPercs = () => {
-    this.percs = PercAPI.all()
+  // @action fetchPercs = () => {
+  //   this.percs = PercAPI.all()
+  // }
+
+  // rxdb:
+  @observable col_obj = {}
+  @observable col_rxdb = {}
+  @observable docs_rxdb = []
+  @observable db = null
+
+  @action setCollection = (db_obj) => {
+    this.col_obj = db_obj.perc_col_obj
+    this.col_rxdb = db_obj.perc_col_rxdb
+    this.db = db_obj.db
+
+    this.col_rxdb.find().exec() // <- find all documents
+      .then(documents => { 
+        this.docs_rxdb = documents
+        this.percs = documents
+      })
   }
 
 }

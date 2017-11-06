@@ -14,16 +14,10 @@ import { PercAPI, SongsAPI } from '../../data/json_service'
 @inject("perc_store", "song_store")
 @observer
 export default class Header extends React.Component {
-
-    componentWillMount(){
-        this.props.perc_store.fetchPercs()
-        this.props.song_store.fetchSongs()
-    }
-
-    render() {
-        
+    render() {        
         const percs = this.props.perc_store.percs        
         const genres = this.props.song_store.songs
+        const containerClass = "button-collapse top-nav waves-effect waves-light circle hide-on-large-only"
         const collapsibleItemClass = "sidebard-header collapsible-header waves-effect waves-teal" 
         const collapsibleSubItemClass = "sidebard-header waves-effect waves-teal"    
         const noncollapsibleItemClass = "sidebard-header non-collapsible-header waves-effect waves-teal"       
@@ -33,7 +27,9 @@ export default class Header extends React.Component {
         return (
             <header>
                 <div className="container">
-                    <a href="#" data-activates="nav-mobile" className="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i className="material-icons">menu</i></a>
+                    <a href="#" data-activates="nav-mobile" className={containerClass}>
+                        <i className="material-icons">menu</i>
+                    </a>
                 </div>
                 <ul id="nav-mobile" className="side-nav fixed">
                     <li className="logo">
@@ -41,14 +37,22 @@ export default class Header extends React.Component {
                     </li>
                     
                     <ul className="collapsible collapsible-accordion">
-                        <li className="bold"><NavLink activeClassName={`${noncollapsibleItemClass} active`} style={noncollapsibleItemStyle} to="/">Home</NavLink></li>
+                        <li className="bold">
+                            <NavLink activeClassName={`${noncollapsibleItemClass} active`} 
+                                     style={noncollapsibleItemStyle} to="/">Home
+                            </NavLink>
+                        </li>
                         <li className="bold"><a className={collapsibleItemClass}>Percussions</a>
                             <div className="collapsible-body">
                                 <ul>                                    
                                     {
                                         percs.map((perc, i) => {
                                             return ( 
-                                                <li key={i}><Link to={`/perc/${perc.id}/edit`} className={collapsibleSubItemClass}>{perc.name}</Link></li>                                                 
+                                                <li key={i}>
+                                                    <Link to={`/perc/${perc.id}/edit`} className={collapsibleSubItemClass}>
+                                                        {perc.name}
+                                                    </Link>
+                                                </li>                                                 
                                             )
                                         })
                                     }
@@ -61,29 +65,49 @@ export default class Header extends React.Component {
                                     {
                                         genres.map((genre, i) => {
                                             return ( 
-                                                <li key={i}><Link to={`/songs/${i}`} className={collapsibleSubItemClass}>{genre.genre}</Link></li>                                                 
+                                                <li key={i}>
+                                                    <Link to={`/songs/${i}`} className={collapsibleSubItemClass}>
+                                                        {genre.genre}
+                                                    </Link>
+                                                </li>                                                 
                                             )
                                         })
                                     }
                                 </ul>
                             </div>
                         </li>
-                        <li className="bold"><a className={collapsibleItemClass}>Practice<span className="new badge"></span></a>
+                        <li className="bold">
+                            <a className={collapsibleItemClass}>
+                                Practice<span className="new badge"></span>
+                            </a>
                             <div className="collapsible-body">
                                 <ul>
                                     {
                                         percs.map((perc, i) => {
                                             return ( 
-                                                <li key={i}><Link to={`/perc/${perc.id}/run`} className={collapsibleSubItemClass}>Practice {perc.name}</Link></li>                                                 
+                                                <li key={i}>
+                                                    <Link to={`/perc/${perc.id}/run`} className={collapsibleSubItemClass}>
+                                                        Practice {perc.name}
+                                                    </Link>
+                                                </li>                                                 
                                             )
                                         })
                                     }
                                 </ul>
                             </div>
                         </li>
-                        <li className="bold"><Link to="/settings" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Settings</Link></li>
-                        <li className="bold"><Link to="/mobx" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Mobx</Link></li>
-                        <li className="bold"><a href="#" className={noncollapsibleItemClass} style={noncollapsibleItemStyle}>Plugins</a></li>
+                        <li className="bold">
+                            <Link to="/settings" className={noncollapsibleItemClass} 
+                                                 style={noncollapsibleItemStyle}>Settings</Link>
+                        </li>
+                        <li className="bold">
+                            <Link to="/mobx" className={noncollapsibleItemClass} 
+                                             style={noncollapsibleItemStyle}>Mobx</Link>
+                        </li>
+                        <li className="bold">
+                            <a href="#" className={noncollapsibleItemClass} 
+                                        style={noncollapsibleItemStyle}>Plugins</a>
+                        </li>
                     </ul> 
                 </ul>
             </header>

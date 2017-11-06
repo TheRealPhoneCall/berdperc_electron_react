@@ -13,8 +13,8 @@ export default class Songs extends React.Component {
   componentWillMount(){
     const default_perc = "berdcajon_v1"
     const { config_store, song_store } = this.props
-    config_store.fetchConfigs(default_perc)    
-    song_store.fetchSongs()
+    // config_store.fetchConfigs(default_perc)    
+    // song_store.fetchSongs()
     song_store.setID(this.props.match.params.id)
     config_store.fetchConfigsByGenre(default_perc, song_store.current_song.genre)
   }

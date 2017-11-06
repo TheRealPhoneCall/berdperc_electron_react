@@ -73,9 +73,25 @@ class MapListStore {
     this.pads_metas.push(pad)
   }
 
-  
+  // rxdb:
+  @observable col_obj = {}
+  @observable col_rxdb = {}
+  @observable docs_rxdb = []
+  @observable db = null
+
+  @action setCollection = (db_obj) => {
+    this.col_obj = db_obj.map_list_col_obj
+    this.col_rxdb = db_obj.map_list_col_rxdb
+    this.db = db_obj.db
+
+    this.col_rxdb.find().exec() // <- find all documents
+      .then(documents => { 
+        this.docs_rxdb = documents
+        this.maps = documents
+      })
+  }
 
 }
 
-const pad_store = new PadStore
-export default pad_store
+const map_list_store = new MapListStore
+export default map_list_store

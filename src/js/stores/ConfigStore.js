@@ -64,8 +64,26 @@ class ConfigStore {
     this.configs.push(config)
   }
 
-  @action fetchConfigs = (perc_slug) => {
-    this.configs = ConfigAPI.all_configs(perc_slug)
+  // @action fetchConfigs = (perc_slug) => {
+  //   this.configs = ConfigAPI.all_configs(perc_slug)
+  // }
+
+  // rxdb:
+  @observable col_obj = {}
+  @observable col_rxdb = {}
+  @observable db = null
+  @observable docs_rxdb = []
+
+  @action setCollection = (db_obj) => {
+    this.col_obj = db_obj.config_col_obj
+    this.col_rxdb = db_obj.config_col_rxdb
+    this.db = db_obj.db
+
+    this.col_rxdb.find().exec() // <- find all documents
+      .then(documents => { 
+        this.docs_rxdb = documents
+        this.configs = documents
+      })
   }
 
 }

@@ -16,11 +16,10 @@ export default class Home extends React.Component {
     super();
   }
   componentWillMount(){
-    this.props.perc_store.fetchPercs()
+    // this.props.perc_store.fetchPercs()
   }
   render() {
     console.log("Home Page Rendered!")
-    // this.props.perc_store.fetchPercs()
     const percs = this.props.perc_store.percs
     console.log("mobx store:", this.props, this.props.store)
     return (
