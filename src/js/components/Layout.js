@@ -12,6 +12,10 @@ import BerdPercDB from '../../data/rxdb_service'
 @observer
 export default class Layout extends React.Component {
     async componentWillMount(){
+        await this.initiateDB()
+    }
+
+    async initiateDB(){
         // initialize db
         const db_obj = new BerdPercDB('berdpercdb', 'websql')
         const db = await db_obj.createDB()
@@ -29,7 +33,8 @@ export default class Layout extends React.Component {
         ])        
     }
 
-    render() {        
+    render() {    
+        console.log("Mobx Store:", this.props)
         return (
             <div>
                 <Header />

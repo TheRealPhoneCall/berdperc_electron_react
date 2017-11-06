@@ -1,5 +1,6 @@
 import React from 'react'
-import { BrowserRouter, Route, IndexRedirect, Redirect, Switch, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter, Route, IndexRedirect, 
+         Redirect, Switch, Link, NavLink } from 'react-router-dom'
 
 import Home from '../pages/Home'
 import About from '../pages/About'
@@ -16,7 +17,6 @@ import SongEdit from '../components/songs/SongEdit'
 export default class Main extends React.Component {    
     
     render() {        
-        console.log("mobx store:", this.props)
         return (            
             <div className="row">
                 <div className="col s9 offset-s3">

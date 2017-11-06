@@ -16,7 +16,9 @@ export default class Nav extends React.Component {
               <div className="brand-logo">
                 <Link to="/" className="brand-logo">berdperc</Link>
               </div>
-              <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+              <a href="#" data-activates="mobile-demo" className="button-collapse">
+                <i className="material-icons">menu</i>
+              </a>
               <ul className="right hide-on-med-and-down">
                 <li><NavLink activeClassName="active" to="/about">About</NavLink></li>
                 <li><NavLink activeClassName="active" to="/settings">Settings</NavLink></li>
